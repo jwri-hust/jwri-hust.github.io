@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JWRI HUST-UOsaka | Welding & Joining Research</title>
+<meta name="description" content="JWRI HUST-UOsaka — Nghiên cứu, đào tạo và dịch vụ thử nghiệm trong công nghệ hàn, ghép nối và vật liệu.">
+<meta name="theme-color" content="#102e42">
+<style>
+:root{--ink:#102e42;--accent:#b7472e;--paper:#faf9f5;--soft:#eeeee6;--line:#d9dedc;--muted:#536772;--font:Georgia,serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--accent)}
+button,select{font:inherit}
+button,a,select{touch-action:manipulation}
+a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+.wrap{width:min(1180px,90%);margin:auto}
+.top{background:var(--ink);color:#fff;font-size:11px;letter-spacing:.13em;padding:9px 0}
+.top .wrap{display:flex;justify-content:space-between;gap:14px}
+.top a{color:#fff}
+header{position:sticky;top:0;z-index:9;background:var(--paper);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:21px 0}
+.brand{font-size:24px;font-weight:800;letter-spacing:-1px;line-height:1.15}
+.brand small{display:block;font-size:9px;font-weight:500;letter-spacing:.2em;margin-top:7px}
+nav{display:flex;gap:24px;font-size:13px;font-weight:600;align-items:center}
+.tools{display:flex;gap:12px;align-items:center}
+.lang{border:1px solid var(--line);background:transparent;padding:6px 10px;color:var(--ink);cursor:pointer}
+.menu{display:none}
+main{overflow:hidden}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;min-height:660px;align-items:center;gap:7%;padding:72px 0}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:700;display:flex;align-items:center;gap:12px}
+.eyebrow:before{content:"";width:25px;height:2px;background:var(--accent)}
+h1,h2,h3,p{margin-top:0}
+h1,h2{font-family:var(--font);font-weight:400;letter-spacing:-.045em;line-height:1.13}
+h1{font-size:clamp(43px,4.8vw,68px);margin:25px 0}
+h1 em{font-style:normal;color:var(--accent)}
+.lead{color:var(--muted);max-width:540px;font-size:16px;line-height:1.85}
+.actions{display:flex;gap:18px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:28px;background:var(--ink);color:#fff;padding:14px 21px;font-size:13px;border:1px solid var(--ink)}
+.btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn.light{background:transparent;color:var(--ink);border-color:var(--line)}
+.visual{background:var(--ink);color:#fff;position:relative;padding:32px;min-height:450px;display:flex;flex-direction:column;justify-content:space-between}
+.visual svg{width:100%;height:270px}
+.visual-caption{display:flex;justify-content:space-between;gap:18px;font-size:10px;letter-spacing:.13em;border-top:1px solid #ffffff35;padding-top:20px}
+.visual:after{content:"";position:absolute;right:-15px;bottom:-15px;border-right:1px solid var(--accent);border-bottom:1px solid var(--accent);width:90px;height:90px}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.strip div{padding:24px 30px;border-right:1px solid var(--line)}
+.strip div:first-child{padding-left:0}
+.strip div:last-child{border:0}
+.strip strong{display:block;font-size:16px}
+.strip span{font-size:12px;color:var(--muted)}
+section{padding:90px 0;border-bottom:1px solid var(--line)}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:40px;margin-bottom:38px}
+.section-head h2{font-size:clamp(32px,4vw,46px);margin:18px 0 0}
+.section-head p{max-width:410px;font-size:14px;color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.card{border-top:2px solid var(--ink);padding:24px 0}
+.num{font-size:11px;color:var(--accent);letter-spacing:.1em}
+.card h3{font-size:21px;margin:18px 0 12px;line-height:1.3}
+.card p{font-size:14px;color:var(--muted)}
+.card .tag{display:inline-block;font-size:10px;letter-spacing:.06em;border:1px solid var(--line);padding:4px 8px;margin:3px 2px 0 0}
+.services{background:var(--soft)}
+.service-list{display:grid;grid-template-columns:1fr 1fr;gap:0 45px}
+.service{padding:21px 0;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px}
+.service b{font-size:16px}
+.service small{display:block;color:var(--muted);font-size:12px;margin-top:5px}
+.service .arrow{font-size:22px;color:var(--accent)}
+.equip{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.equip-list div{display:flex;justify-content:space-between;gap:25px;padding:15px 0;border-bottom:1px solid var(--line);font-size:13px}
+.equip-list span{color:var(--muted)}
+.quote{background:var(--ink);color:#fff;padding:38px;display:flex;flex-direction:column;justify-content:space-between}
+.quote h3{font:30px/1.35 var(--font);margin:12px 0 25px}
+.quote p{font-size:14px;color:#d0dce2}
+.quote .btn{border-color:#ffffff60}
+.contact{background:var(--ink);color:#fff}
+.contact h2{font-size:clamp(35px,4.5vw,56px);margin:20px 0}
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:10%}
+.contact p{color:#d0dce2}
+.contact a:hover{color:#ffbc99}
+.contact-details{padding-top:35px}
+.contact-details div{border-bottom:1px solid #ffffff30;padding:15px 0}
+.contact-details small{display:block;font-size:10px;letter-spacing:.12em;color:#b8cbd5}
+.contact .btn{background:var(--paper);color:var(--ink)}
+footer{padding:30px 0}
+.footer-line{display:flex;justify-content:space-between;gap:25px;align-items:center}
+.footer-line p{font-size:11px;color:var(--muted);margin:0}
+.theme-control{display:flex;align-items:center;gap:10px;font-size:11px}
+.theme-control select{font-size:11px;padding:6px;background:var(--paper);color:var(--ink);border:1px solid var(--line)}
+body[data-theme="tech"]{--ink:#102d47;--accent:#087f8c;--paper:#f5f8fb;--soft:#e8eff5;--font:system-ui,sans-serif}
+body[data-theme="academic"]{--ink:#343626;--accent:#806027;--paper:#fffdf6;--soft:#f1edde;--font:Georgia,serif}
+body[data-theme="tech"] .visual{background:linear-gradient(135deg,#102d47,#08616c)}
+.skip{position:absolute;left:12px;top:-100px;z-index:20;background:#fff;padding:8px}
+.skip:focus{top:5px}
+@media(max-width:980px){nav{gap:13px;font-size:12px}
+.brand{font-size:20px}
+.hero{gap:5%;min-height:590px}
+.visual{padding:22px;min-height:380px}
+.visual svg{height:230px}
+}
+@media(max-width:760px){.top .wrap span:last-child{display:none}
+.bar{padding:16px 0;flex-wrap:wrap}
+.menu{display:block;background:transparent;color:var(--ink);border:1px solid var(--line);padding:6px 10px;cursor:pointer}
+nav{display:none;width:100%;order:3;flex-wrap:wrap;padding-top:10px}
+nav.open{display:flex}
+.hero{grid-template-columns:1fr;padding:45px 0;gap:40px}
+.visual{min-height:330px}
+.visual svg{height:210px}
+.strip div{padding:18px 13px}
+.strip strong{font-size:13px}
+.strip span{font-size:10px}
+section{padding:58px 0}
+.section-head{display:block}
+.section-head p{margin-top:20px}
+.grid,.equip,.contact-grid{grid-template-columns:1fr;gap:22px}
+.service-list{grid-template-columns:1fr}
+.footer-line{align-items:start;flex-direction:column}
+.contact-details{padding-top:0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="top">
+<div class="wrap">
+<span>HUST × OSAKA UNIVERSITY</span>
+<span data-i="top">HỢP TÁC NGHIÊN CỨU VIỆT NAM – NHẬT BẢN</span>
+</div>
+</div>
+<header>
+<div class="wrap bar">
+<a href="#" class="brand">JWRI <span style="font-weight:400">HUST-UOsaka</span>
+<small>WELDING AND JOINING RESEARCH INSTITUTE</small>
+</a>
+<nav id="nav" aria-label="Main navigation">
+<a href="#about" data-i="navAbout">Giới thiệu</a>
+<a href="#research" data-i="navResearch">Nghiên cứu</a>
+<a href="#services" data-i="navServices">Dịch vụ</a>
+<a href="#equipment" data-i="navEquipment">Thiết bị</a>
+<a href="#contact" data-i="navContact">Liên hệ</a>
+</nav>
+<div class="tools">
+<button class="lang" id="language" type="button" aria-label="Switch language to English">EN</button>
+<button class="menu" id="menu" aria-expanded="false" aria-controls="nav" type="button">☰</button>
+</div>
+</div>
+</header>
+<main id="main">
+<div class="wrap">
+<div class="hero" id="about">
+<div>
+<div class="eyebrow" data-i="heroLabel">KHOA HỌC GHÉP NỐI. KẾT NỐI TƯƠNG LAI.</div>
+<h1 data-i="heroTitle">Kết nối vật liệu.<br>
+<em>Kiến tạo giá trị.</em>
+</h1>
+<p class="lead" data-i="heroText">JWRI HUST-UOsaka kết nối nghiên cứu, đào tạo và ứng dụng công nghiệp trong công nghệ hàn, ghép nối và vật liệu — trên nền tảng hợp tác giữa Đại học Bách khoa Hà Nội và Đại học Osaka.</p>
+<div class="actions">
+<a class="btn" href="#research">
+<span data-i="explore">Khám phá nghiên cứu</span> ↗</a>
+<a class="btn light" href="#contact" data-i="collaborate">Kết nối hợp tác</a>
+</div>
+</div>
+<div class="visual" role="img" aria-label="Abstract illustration of two materials joining at a weld">
+<div class="eyebrow">THE SCIENCE OF CONNECTION</div>
+<svg viewBox="0 0 440 270" aria-hidden="true">
+<defs>
+<linearGradient id="plate" x2="1" y2="1">
+<stop stop-color="#c2d5dc"/>
+<stop offset="1" stop-color="#3d6477"/>
+</linearGradient>
+<radialGradient id="heat">
+<stop stop-color="#fff6bc"/>
+<stop offset=".25" stop-color="#f2a468"/>
+<stop offset="1" stop-color="#c1603f" stop-opacity="0"/>
+</radialGradient>
+<pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse">
+<path d="M22 0H0V22" fill="none" stroke="#fff" stroke-opacity=".07"/>
+</pattern>
+</defs>
+<rect width="440" height="270" fill="url(#grid)"/>
+<path d="M15 155 160 69 230 112 85 201Z" fill="url(#plate)"/>
+<path d="M230 112 303 69 439 152 365 197Z" fill="url(#plate)"/>
+<path d="M15 155v18l70 45v-17Zm70 46 145-89v18L85 218Zm145-89v18l135 85v-18Zm135 85v18l74-45v-18Z" fill="#557c8e"/>
+<path d="m160 69 205 128" stroke="#f5bf88" stroke-width="3"/>
+<circle cx="230" cy="113" r="65" fill="url(#heat)"/>
+<path d="m250 12-20 68" stroke="#91adba" stroke-width="20"/>
+<path d="m231 79-5 23" stroke="#fff4ca" stroke-width="5"/>
+<g stroke="#f5bd7d" stroke-width="1.5">
+<path d="m229 110-41-38m45 37 40-31m-40 38 55 18m-62-21-22 32m26-30 4-56"/>
+</g>
+<circle cx="228" cy="111" r="7" fill="#fff9d8"/>
+<text x="24" y="245" fill="#b9d0db" font-size="9" letter-spacing="3">MATERIALS / ENERGY / INNOVATION</text>
+</svg>
+<div class="visual-caption">
+<span>HANOI, VIETNAM</span>
+<span>RESEARCH WITHOUT BOUNDARIES ↗</span>
+</div>
+</div>
+</div>
+<div class="strip">
+<div>
+<strong data-i="pillar1">Nghiên cứu liên ngành</strong>
+<span data-i="pillar1s">Hàn · Ghép nối · Vật liệu</span>
+</div>
+<div>
+<strong data-i="pillar2">Hợp tác Việt – Nhật</strong>
+<span>HUST · Osaka University</span>
+</div>
+<div>
+<strong data-i="pillar3">Gắn kết công nghiệp</strong>
+<span data-i="pillar3s">Thử nghiệm · Tư vấn · Đào tạo</span>
+</div>
+</div>
+<section id="research">
+<div class="section-head">
+<div>
+<div class="eyebrow" data-i="researchLabel">LĨNH VỰC NGHIÊN CỨU</div>
+<h2 data-i="researchTitle">Từ cơ chế đến ứng dụng.</h2>
+</div>
+<p data-i="researchText">Kết hợp khoa học vật liệu với công nghệ chế tạo để giải quyết những bài toán thực tiễn của nghiên cứu và sản xuất.</p>
+</div>
+<div class="grid">
+<article class="card">
+<span class="num">01 / JOINING PROCESSES</span>
+<h3 data-i="r1">Quá trình hàn và ghép nối</h3>
+<p data-i="r1t">Nghiên cứu nguồn nhiệt, tương tác vật liệu và thông số công nghệ trong hàn nóng chảy, hàn ma sát khuấy và các quá trình ghép nối.</p>
+<span class="tag">LASER</span>
+<span class="tag">FSW</span>
+<span class="tag">ARC WELDING</span>
+</article>
+<article class="card">
+<span class="num">02 / MATERIALS SCIENCE</span>
+<h3 data-i="r2">Vật liệu và tổ chức tế vi</h3>
+<p data-i="r2t">Phân tích mối quan hệ giữa quá trình chế tạo, tổ chức tế vi và tính chất của vật liệu, mối hàn và liên kết khác loại.</p>
+<span class="tag">SEM / EDS</span>
+<span class="tag">EBSD</span>
+<span class="tag">METALLURGY</span>
+</article>
+<article class="card">
+<span class="num">03 / COMPUTATIONAL ENGINEERING</span>
+<h3 data-i="r3">Mô phỏng và tối ưu hóa</h3>
+<p data-i="r3t">Kết hợp thực nghiệm, mô phỏng và phân tích dữ liệu để hiểu cơ chế, đánh giá chất lượng và tối ưu hóa quá trình công nghệ.</p>
+<span class="tag">SIMULATION</span>
+<span class="tag">DATA ANALYSIS</span>
+<span class="tag">OPTIMIZATION</span>
+</article>
+</div>
+</section>
+</div>
+<div class="services">
+<section class="wrap" id="services">
+<div class="section-head">
+<div>
+<div class="eyebrow" data-i="servicesLabel">DỊCH VỤ & THỬ NGHIỆM</div>
+<h2 data-i="servicesTitle">Hiểu vật liệu.<br>Làm chủ chất lượng.</h2>
+</div>
+<p data-i="servicesText">Trao đổi với nhóm chuyên môn để lựa chọn phương pháp phân tích, chuẩn bị mẫu và xác định phạm vi công việc phù hợp.</p>
+</div>
+<div class="service-list">
+<a class="service" href="mailto:info@jwri-hust.com?subject=SEM%20EDS">
+<div>
+<b>SEM / EDS</b>
+<small data-i="s1">Hình thái bề mặt và phân tích thành phần nguyên tố</small>
+</div>
+<span class="arrow">↗</span>
+</a>
+<a class="service" href="mailto:info@jwri-hust.com?subject=EBSD">
+<div>
+<b>EBSD</b>
+<small data-i="s2">Định hướng tinh thể, pha và đặc trưng hạt</small>
+</div>
+<span class="arrow">↗</span>
+</a>
+<a class="service" href="mailto:info@jwri-hust.com?subject=XRD">
+<div>
+<b>XRD</b>
+<small data-i="s3">Trao đổi yêu cầu phân tích nhiễu xạ tia X</small>
+</div>
+<span class="arrow">↗</span>
+</a>
+<a class="service" href="mailto:info@jwri-hust.com?subject=Mechanical%20testing">
+<div>
+<b data-i="s4">Thử nghiệm cơ tính</b>
+<small data-i="s4t">Kéo, uốn, độ cứng và độ dai va đập</small>
+</div>
+<span class="arrow">↗</span>
+</a>
+<a class="service" href="mailto:info@jwri-hust.com?subject=Metallography">
+<div>
+<b data-i="s5">Kim tương & chuẩn bị mẫu</b>
+<small data-i="s5t">Quan sát macro, tổ chức tế vi và chuẩn bị mẫu phân tích</small>
+</div>
+<span class="arrow">↗</span>
+</a>
+<a class="service" href="mailto:info@jwri-hust.com?subject=Welding%20consulting">
+<div>
+<b data-i="s6">Tư vấn công nghệ hàn</b>
+<small data-i="s6t">Trao đổi bài toán quy trình, chất lượng và chuyển giao công nghệ</small>
+</div>
+<span class="arrow">↗</span>
+</a>
+</div>
+</section>
+</div>
+<div class="wrap">
+<section id="equipment">
+<div class="section-head">
+<div>
+<div class="eyebrow" data-i="equipmentLabel">HẠ TẦNG NGHIÊN CỨU</div>
+<h2 data-i="equipmentTitle">Thiết bị cho những<br>câu hỏi chuyên sâu.</h2>
+</div>
+<p data-i="equipmentText">Một số thiết bị tiêu biểu phục vụ nghiên cứu công nghệ hàn và phân tích vật liệu tại JWRI HUST-UOsaka.</p>
+</div>
+<div class="equip">
+<div class="equip-list">
+<div>
+<b>SEM–EDS / EBSD</b>
+<span>JSM-IT800HL</span>
+</div>
+<div>
+<b data-i="e2">Hàn laser sợi quang</b>
+<span>FEC 6000M-W</span>
+</div>
+<div>
+<b data-i="e3">Hàn ma sát khuấy</b>
+<span>2D-FSW</span>
+</div>
+<div>
+<b>TIG</b>
+<span>YC-500WX-4</span>
+</div>
+<div>
+<b data-i="e5">Plasma bột</b>
+<span>NW-350AH-V</span>
+</div>
+<div>
+<b data-i="e6">Kính hiển vi soi nổi</b>
+<span>RZ</span>
+</div>
+</div>
+<aside class="quote">
+<div>
+<div class="eyebrow" data-i="trainingLabel">ĐÀO TẠO & HỢP TÁC</div>
+<h3 data-i="trainingTitle">Đưa tri thức từ phòng thí nghiệm đến thực tiễn.</h3>
+<p data-i="trainingText">Kết nối đào tạo, nghiên cứu và nhu cầu doanh nghiệp trong công nghệ hàn, ghép nối và vật liệu.</p>
+</div>
+<a class="btn" href="#contact">
+<span data-i="trainingCta">Trao đổi nhu cầu đào tạo</span> ↗</a>
+</aside>
+</div>
+</section>
+</div>
+<section class="contact" id="contact">
+<div class="wrap contact-grid">
+<div>
+<div class="eyebrow" data-i="contactLabel">BẮT ĐẦU MỘT KẾT NỐI</div>
+<h2 data-i="contactTitle">Bài toán của thầy/cô,<br>doanh nghiệp là gì?</h2>
+<p data-i="contactText">Gửi yêu cầu nghiên cứu, thử nghiệm hoặc đào tạo. Nhóm chuyên môn sẽ trao đổi về phương án và phạm vi thực hiện.</p>
+<div class="actions">
+<a class="btn" href="mailto:info@jwri-hust.com" data-i="contactCta">Gửi yêu cầu qua email ↗</a>
+</div>
+</div>
+<div class="contact-details">
+<div>
+<small>EMAIL</small>
+<a href="mailto:info@jwri-hust.com">info@jwri-hust.com</a>
+</div>
+<div>
+<small data-i="phone">ĐIỆN THOẠI / ZALO</small>
+<a href="tel:+84966064486">+84 966 064 486</a>
+</div>
+<div>
+<small data-i="addressLabel">ĐỊA CHỈ</small>
+<span data-i="address">Số 3, ngõ 15 Tạ Quang Bửu, phường Bạch Mai, Hà Nội</span>
+</div>
+<div>
+<small data-i="affiliationLabel">ĐƠN VỊ CHỦ QUẢN</small>
+<span data-i="affiliation">Trường Cơ khí · Đại học Bách khoa Hà Nội</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap footer-line">
+<p>© <span id="year">2026</span> JWRI HUST-UOsaka<br>Welding and Joining Research Institute HUST-UOsaka</p>
+<div class="theme-control">
+<label for="theme" data-i="themeLabel">Phong cách giao diện</label>
+<select id="theme">
+<option value="institute">Institute</option>
+<option value="tech">Technology</option>
+<option value="academic">Academic</option>
+</select>
+</div>
+<a href="#" style="font-size:12px" data-i="backTop">Về đầu trang ↑</a>
+</div>
+</footer><script>
+
+const en={top:'VIETNAM – JAPAN RESEARCH COLLABORATION',
+navAbout:'About',
+navResearch:'Research',
+navServices:'Services',
+navEquipment:'Facilities',
+navContact:'Contact',
+heroLabel:'JOINING SCIENCE. CONNECTING THE FUTURE.',
+heroTitle:'Joining materials.<br><em>Creating value.</em>',
+heroText:'JWRI HUST-UOsaka connects research, education and industrial applications in welding, joining and materials through collaboration between Hanoi University of Science and Technology and Osaka University.',
+explore:'Explore our research',
+collaborate:'Collaborate with us',
+pillar1:'Interdisciplinary research',
+pillar1s:'Welding · Joining · Materials',
+pillar2:'Vietnam – Japan collaboration',
+pillar3:'Industry engagement',
+pillar3s:'Testing · Consulting · Training',
+researchLabel:'RESEARCH AREAS',
+researchTitle:'From mechanisms to applications.',
+researchText:'Connecting materials science and manufacturing technology to address practical challenges in research and industry.',
+r1:'Welding and joining processes',
+r1t:'Studying heat sources, material interactions and process parameters in fusion welding, friction stir welding and joining processes.',
+r2:'Materials and microstructure',
+r2t:'Investigating relationships between processing, microstructure and properties in materials, welds and dissimilar joints.',
+r3:'Simulation and optimization',
+r3t:'Combining experiments, simulation and data analysis to understand mechanisms, evaluate quality and optimize manufacturing processes.',
+servicesLabel:'SERVICES & TESTING',
+servicesTitle:'Understand materials.<br>Advance quality.',
+servicesText:'Discuss your analytical requirements, specimen preparation and scope of work with our technical team.',
+s1:'Surface morphology and elemental analysis',
+s2:'Crystal orientation, phases and grain characterization',
+s3:'Discuss your X-ray diffraction analysis requirements',
+s4:'Mechanical testing',
+s4t:'Tensile, bend, hardness and impact testing',
+s5:'Metallography & specimen preparation',
+s5t:'Macro examination, microstructure and analytical specimen preparation',
+s6:'Welding technology consulting',
+s6t:'Process development, quality and technology transfer',
+equipmentLabel:'RESEARCH INFRASTRUCTURE',
+equipmentTitle:'Tools for deeper<br>questions.',
+equipmentText:'Selected equipment supporting welding research and materials characterization at JWRI HUST-UOsaka.',
+e2:'Fiber laser welding',
+e3:'Friction stir welding',
+e5:'Powder plasma',
+e6:'Stereo microscopy',
+trainingLabel:'EDUCATION & COLLABORATION',
+trainingTitle:'Bringing knowledge from the laboratory to practice.',
+trainingText:'Connecting education, research and industry needs in welding, joining and materials.',
+trainingCta:'Discuss your training needs',
+contactLabel:'START A CONNECTION',
+contactTitle:'What challenge<br>are you working on?',
+contactText:'Send your research, testing or training requirements. Our technical team will discuss suitable approaches and the scope of work.',
+contactCta:'Send an email enquiry ↗',
+phone:'PHONE / ZALO',
+addressLabel:'ADDRESS',
+address:'No. 3/15 Ta Quang Buu, Bach Mai Ward, Hanoi, Vietnam',
+affiliationLabel:'AFFILIATION',
+affiliation:'School of Mechanical Engineering · HUST',
+themeLabel:'Visual style',
+backTop:'Back to top ↑'};
+
+const nodes=[...document.querySelectorAll('[data-i]')];
+const vi=Object.fromEntries(nodes.map(n=>[n.dataset.i,n.innerHTML]));
+let lang='vi';
+function setLang(next){lang=next;
+const dict=lang==='en'?en:vi;
+nodes.forEach(n=>{if(dict[n.dataset.i]!==undefined)n.innerHTML=dict[n.dataset.i]});
+document.documentElement.lang=lang;
+document.getElementById('language').textContent=lang==='vi'?'EN':'VI';
+document.getElementById('language').setAttribute('aria-label',
+lang==='vi'?'Switch language to English':'Chuyển sang tiếng Việt');
+try{localStorage.setItem('jwri-language',
+lang)}catch(e){}}document.getElementById('language').addEventListener('click',
+()=>setLang(lang==='vi'?'en':'vi'));
+const theme=document.getElementById('theme');
+function setTheme(value){if(!['institute',
+'tech',
+'academic'].includes(value))return;
+document.body.dataset.theme=value;
+theme.value=value;
+try{localStorage.setItem('jwri-theme',
+value)}catch(e){}}theme.addEventListener('change',
+()=>setTheme(theme.value));
+try{setLang(localStorage.getItem('jwri-language')==='en'?'en':'vi');
+setTheme(localStorage.getItem('jwri-theme')||'institute')}catch(e){}const menu=document.getElementById('menu'),nav=document.getElementById('nav');
+menu.addEventListener('click',
+()=>{const open=nav.classList.toggle('open');
+menu.setAttribute('aria-expanded',
+String(open))});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',
+()=>{nav.classList.remove('open');
+menu.setAttribute('aria-expanded',
+'false')}));
+document.getElementById('year').textContent=new Date().getFullYear();
+
+</script></body></html>
