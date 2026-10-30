@@ -127,6 +127,28 @@ html:lang(ja) .eyebrow,html:lang(zh-Hans) .eyebrow{letter-spacing:.06em}
 @media(max-width:1100px){.bar{flex-wrap:wrap}nav{order:3;width:100%;justify-content:center}}
 @media(max-width:760px){.brand{font-size:18px}.brand small{font-size:8px}.tools{gap:8px}.lang{font-size:12px}.visual-caption{flex-wrap:wrap}}
 @media(max-width:390px){.brand{width:100%}.tools{margin-left:auto}}
+.mobile-menu{display:none}
+@media(max-width:760px){
+html{scroll-padding-top:170px}
+header .bar{gap:12px;padding:12px 0}
+header .brand{width:100%;font-size:21px}
+header .brand small{font-size:8px;letter-spacing:.14em}
+header .tools{width:100%;justify-content:space-between;gap:12px}
+header #nav{display:none}
+header .lang{min-height:44px;max-width:calc(100% - 60px);font-size:14px;background:var(--paper)}
+.mobile-menu{display:block}
+.mobile-menu summary{display:flex;align-items:center;justify-content:center;min-width:48px;min-height:44px;cursor:pointer;border:1px solid var(--line);list-style:none;color:var(--ink);background:var(--paper);border-radius:3px}
+.mobile-menu summary::-webkit-details-marker{display:none}
+.mobile-menu summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.mobile-menu[open] summary{background:var(--ink);color:var(--paper)}
+header #mobile-nav{position:absolute;top:100%;left:0;right:0;display:grid;width:100%;gap:0;padding:8px 5% 16px;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 12px 20px #102e4215;max-height:65vh;overflow-y:auto}
+header #mobile-nav a{display:flex;align-items:center;min-height:48px;padding:10px 12px;font-size:16px;border-bottom:1px solid var(--line)}
+header #mobile-nav a:hover,header #mobile-nav a:focus-visible{background:var(--soft);color:var(--accent)}
+.hero{padding-top:32px}
+.visual-caption{gap:12px;line-height:1.7}
+.equip-list div{flex-wrap:wrap;gap:6px 16px}
+.contact-details a{overflow-wrap:anywhere}
+}
 </style>
 </head>
 <body>
@@ -156,7 +178,16 @@ html:lang(ja) .eyebrow,html:lang(zh-Hans) .eyebrow{letter-spacing:.06em}
 <option value="ja" lang="ja">日本語</option>
 <option value="zh-Hans" lang="zh-Hans">中文（简体）</option>
 </select>
-<button class="menu" id="menu" aria-expanded="false" aria-controls="nav" type="button">☰</button>
+<details class="mobile-menu" id="mobile-menu">
+<summary id="menu" aria-label="Mở/đóng menu" aria-controls="mobile-nav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
+<nav id="mobile-nav" aria-label="Điều hướng chính">
+<a href="#about" data-i="navAbout">Giới thiệu</a>
+<a href="#research" data-i="navResearch">Nghiên cứu</a>
+<a href="#services" data-i="navServices">Dịch vụ</a>
+<a href="#equipment" data-i="navEquipment">Thiết bị</a>
+<a href="#contact" data-i="navContact">Liên hệ</a>
+</nav>
+</details>
 </div>
 </div>
 </header>
@@ -272,42 +303,42 @@ html:lang(ja) .eyebrow,html:lang(zh-Hans) .eyebrow{letter-spacing:.06em}
 <p data-i="servicesText">Trao đổi với nhóm chuyên môn để lựa chọn phương pháp phân tích, chuẩn bị mẫu và xác định phạm vi công việc phù hợp.</p>
 </div>
 <div class="service-list">
-<a class="service" href="mailto:info@jwri-hust.com?subject=SEM%20EDS">
+<a class="service" href="mailto:duy.hanle@hust.edu.vn?subject=SEM%20EDS">
 <div>
 <b>SEM / EDS</b>
 <small data-i="s1">Hình thái bề mặt và phân tích thành phần nguyên tố</small>
 </div>
 <span class="arrow">↗</span>
 </a>
-<a class="service" href="mailto:info@jwri-hust.com?subject=EBSD">
+<a class="service" href="mailto:duy.hanle@hust.edu.vn?subject=EBSD">
 <div>
 <b>EBSD</b>
 <small data-i="s2">Định hướng tinh thể, pha và đặc trưng hạt</small>
 </div>
 <span class="arrow">↗</span>
 </a>
-<a class="service" href="mailto:info@jwri-hust.com?subject=XRD">
+<a class="service" href="mailto:duy.hanle@hust.edu.vn?subject=XRD">
 <div>
 <b>XRD</b>
 <small data-i="s3">Trao đổi yêu cầu phân tích nhiễu xạ tia X</small>
 </div>
 <span class="arrow">↗</span>
 </a>
-<a class="service" href="mailto:info@jwri-hust.com?subject=Mechanical%20testing">
+<a class="service" href="mailto:duy.hanle@hust.edu.vn?subject=Mechanical%20testing">
 <div>
 <b data-i="s4">Thử nghiệm cơ tính</b>
 <small data-i="s4t">Kéo, uốn, độ cứng và độ dai va đập</small>
 </div>
 <span class="arrow">↗</span>
 </a>
-<a class="service" href="mailto:info@jwri-hust.com?subject=Metallography">
+<a class="service" href="mailto:duy.hanle@hust.edu.vn?subject=Metallography">
 <div>
 <b data-i="s5">Kim tương & chuẩn bị mẫu</b>
 <small data-i="s5t">Quan sát macro, tổ chức tế vi và chuẩn bị mẫu phân tích</small>
 </div>
 <span class="arrow">↗</span>
 </a>
-<a class="service" href="mailto:info@jwri-hust.com?subject=Welding%20consulting">
+<a class="service" href="mailto:duy.hanle@hust.edu.vn?subject=Welding%20consulting">
 <div>
 <b data-i="s6">Tư vấn công nghệ hàn</b>
 <small data-i="s6t">Trao đổi bài toán quy trình, chất lượng và chuyển giao công nghệ</small>
@@ -372,13 +403,13 @@ html:lang(ja) .eyebrow,html:lang(zh-Hans) .eyebrow{letter-spacing:.06em}
 <h2 data-i="contactTitle">Bài toán của thầy/cô,<br>doanh nghiệp là gì?</h2>
 <p data-i="contactText">Gửi yêu cầu nghiên cứu, thử nghiệm hoặc đào tạo. Nhóm chuyên môn sẽ trao đổi về phương án và phạm vi thực hiện.</p>
 <div class="actions">
-<a class="btn" href="mailto:info@jwri-hust.com" data-i="contactCta">Gửi yêu cầu qua email ↗</a>
+<a class="btn" href="mailto:duy.hanle@hust.edu.vn" data-i="contactCta">Gửi yêu cầu qua email ↗</a>
 </div>
 </div>
 <div class="contact-details">
 <div>
 <small data-i="emailLabel">EMAIL</small>
-<a href="mailto:info@jwri-hust.com">info@jwri-hust.com</a>
+<a href="mailto:duy.hanle@hust.edu.vn">duy.hanle@hust.edu.vn</a>
 </div>
 <div>
 <small data-i="phone">ĐIỆN THOẠI / ZALO</small>
@@ -674,6 +705,7 @@ const language=document.getElementById('language');
 language.value=lang;
 language.setAttribute('aria-label',dict.languageLabel);
 document.getElementById('nav').setAttribute('aria-label',dict.navLabel);
+document.getElementById('mobile-nav').setAttribute('aria-label',dict.navLabel);
 document.getElementById('menu').setAttribute('aria-label',dict.menuLabel);
 document.querySelector('.visual').setAttribute('aria-label',dict.visualAlt);
 document.querySelector('meta[name="description"]').content=dict.heroText;
@@ -690,15 +722,13 @@ try{localStorage.setItem('jwri-theme',
 value)}catch(e){}}theme.addEventListener('change',
 ()=>setTheme(theme.value));
 try{setLang(localStorage.getItem('jwri-language')||'vi');
-setTheme(localStorage.getItem('jwri-theme')||'institute')}catch(e){}const menu=document.getElementById('menu'),nav=document.getElementById('nav');
-menu.addEventListener('click',
-()=>{const open=nav.classList.toggle('open');
-menu.setAttribute('aria-expanded',
-String(open))});
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',
-()=>{nav.classList.remove('open');
-menu.setAttribute('aria-expanded',
-'false')}));
+setTheme(localStorage.getItem('jwri-theme')||'institute')}catch(e){}const mobileMenu=document.getElementById('mobile-menu');
+const menu=document.getElementById('menu');
+const mobileNav=document.getElementById('mobile-nav');
+mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileMenu.open=false}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mobileMenu.open){mobileMenu.open=false;menu.focus()}});
+document.addEventListener('click',e=>{if(mobileMenu.open&&!mobileMenu.contains(e.target))mobileMenu.open=false});
+window.matchMedia('(max-width:760px)').addEventListener('change',e=>{if(!e.matches)mobileMenu.open=false});
 document.getElementById('year').textContent=new Date().getFullYear();
 
 </script></body></html>
