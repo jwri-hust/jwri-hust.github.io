@@ -121,10 +121,16 @@ section{padding:58px 0}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
 }
 
+html:lang(ja) h1,html:lang(ja) h2,html:lang(ja) h3{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;letter-spacing:0;line-height:1.4}
+html:lang(zh-Hans) h1,html:lang(zh-Hans) h2,html:lang(zh-Hans) h3{font-family:"Noto Serif CJK SC","Songti SC",serif;letter-spacing:0;line-height:1.4}
+html:lang(ja) .eyebrow,html:lang(zh-Hans) .eyebrow{letter-spacing:.06em}
+@media(max-width:1100px){.bar{flex-wrap:wrap}nav{order:3;width:100%;justify-content:center}}
+@media(max-width:760px){.brand{font-size:18px}.brand small{font-size:8px}.tools{gap:8px}.lang{font-size:12px}.visual-caption{flex-wrap:wrap}}
+@media(max-width:390px){.brand{width:100%}.tools{margin-left:auto}}
 </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main" data-i="skip">Skip to content</a>
 <div class="top">
 <div class="wrap">
 <span>HUST × OSAKA UNIVERSITY</span>
@@ -144,7 +150,12 @@ section{padding:58px 0}
 <a href="#contact" data-i="navContact">Liên hệ</a>
 </nav>
 <div class="tools">
-<button class="lang" id="language" type="button" aria-label="Switch language to English">EN</button>
+<select class="lang" id="language" aria-label="Chọn ngôn ngữ">
+<option value="vi" lang="vi">Tiếng Việt</option>
+<option value="en" lang="en">English</option>
+<option value="ja" lang="ja">日本語</option>
+<option value="zh-Hans" lang="zh-Hans">中文（简体）</option>
+</select>
 <button class="menu" id="menu" aria-expanded="false" aria-controls="nav" type="button">☰</button>
 </div>
 </div>
@@ -165,7 +176,7 @@ section{padding:58px 0}
 </div>
 </div>
 <div class="visual" role="img" aria-label="Abstract illustration of two materials joining at a weld">
-<div class="eyebrow">THE SCIENCE OF CONNECTION</div>
+<div class="eyebrow" data-i="visualTitle">THE SCIENCE OF CONNECTION</div>
 <svg viewBox="0 0 440 270" aria-hidden="true">
 <defs>
 <linearGradient id="plate" x2="1" y2="1">
@@ -193,11 +204,11 @@ section{padding:58px 0}
 <path d="m229 110-41-38m45 37 40-31m-40 38 55 18m-62-21-22 32m26-30 4-56"/>
 </g>
 <circle cx="228" cy="111" r="7" fill="#fff9d8"/>
-<text x="24" y="245" fill="#b9d0db" font-size="9" letter-spacing="3">MATERIALS / ENERGY / INNOVATION</text>
+<text x="24" y="245" fill="#b9d0db" font-size="9" letter-spacing="3" data-i="visualMaterials">MATERIALS / ENERGY / INNOVATION</text>
 </svg>
 <div class="visual-caption">
-<span>HANOI, VIETNAM</span>
-<span>RESEARCH WITHOUT BOUNDARIES ↗</span>
+<span data-i="visualPlace">HANOI, VIETNAM</span>
+<span data-i="visualTag">RESEARCH WITHOUT BOUNDARIES ↗</span>
 </div>
 </div>
 </div>
@@ -225,7 +236,7 @@ section{padding:58px 0}
 </div>
 <div class="grid">
 <article class="card">
-<span class="num">01 / JOINING PROCESSES</span>
+<span class="num" data-i="r1Label">01 / JOINING PROCESSES</span>
 <h3 data-i="r1">Quá trình hàn và ghép nối</h3>
 <p data-i="r1t">Nghiên cứu nguồn nhiệt, tương tác vật liệu và thông số công nghệ trong hàn nóng chảy, hàn ma sát khuấy và các quá trình ghép nối.</p>
 <span class="tag">LASER</span>
@@ -233,7 +244,7 @@ section{padding:58px 0}
 <span class="tag">ARC WELDING</span>
 </article>
 <article class="card">
-<span class="num">02 / MATERIALS SCIENCE</span>
+<span class="num" data-i="r2Label">02 / MATERIALS SCIENCE</span>
 <h3 data-i="r2">Vật liệu và tổ chức tế vi</h3>
 <p data-i="r2t">Phân tích mối quan hệ giữa quá trình chế tạo, tổ chức tế vi và tính chất của vật liệu, mối hàn và liên kết khác loại.</p>
 <span class="tag">SEM / EDS</span>
@@ -241,7 +252,7 @@ section{padding:58px 0}
 <span class="tag">METALLURGY</span>
 </article>
 <article class="card">
-<span class="num">03 / COMPUTATIONAL ENGINEERING</span>
+<span class="num" data-i="r3Label">03 / COMPUTATIONAL ENGINEERING</span>
 <h3 data-i="r3">Mô phỏng và tối ưu hóa</h3>
 <p data-i="r3t">Kết hợp thực nghiệm, mô phỏng và phân tích dữ liệu để hiểu cơ chế, đánh giá chất lượng và tối ưu hóa quá trình công nghệ.</p>
 <span class="tag">SIMULATION</span>
@@ -366,7 +377,7 @@ section{padding:58px 0}
 </div>
 <div class="contact-details">
 <div>
-<small>EMAIL</small>
+<small data-i="emailLabel">EMAIL</small>
 <a href="mailto:info@jwri-hust.com">info@jwri-hust.com</a>
 </div>
 <div>
@@ -391,9 +402,9 @@ section{padding:58px 0}
 <div class="theme-control">
 <label for="theme" data-i="themeLabel">Phong cách giao diện</label>
 <select id="theme">
-<option value="institute">Institute</option>
-<option value="tech">Technology</option>
-<option value="academic">Academic</option>
+<option value="institute" data-i="themeInstitute">Institute</option>
+<option value="tech" data-i="themeTech">Technology</option>
+<option value="academic" data-i="themeAcademic">Academic</option>
 </select>
 </div>
 <a href="#" style="font-size:12px" data-i="backTop">Về đầu trang ↑</a>
@@ -460,19 +471,215 @@ affiliation:'School of Mechanical Engineering · HUST',
 themeLabel:'Visual style',
 backTop:'Back to top ↑'};
 
+const ja={
+  "top": "ベトナム・日本の研究協力",
+  "navAbout": "概要",
+  "navResearch": "研究",
+  "navServices": "サービス",
+  "navEquipment": "設備",
+  "navContact": "お問い合わせ",
+  "heroLabel": "接合科学で、未来をつなぐ。",
+  "heroTitle": "材料をつなぐ。<br><em>価値を生み出す。</em>",
+  "heroText": "JWRI HUST-UOsakaは、ハノイ理工科大学と大阪大学の協力を基盤に、溶接・接合・材料分野の研究、教育および産業応用をつなぎます。",
+  "explore": "研究分野を見る",
+  "collaborate": "共同研究・連携のご相談",
+  "pillar1": "分野横断型の研究",
+  "pillar1s": "溶接・接合・材料",
+  "pillar2": "ベトナム・日本の協力",
+  "pillar3": "産業界との連携",
+  "pillar3s": "試験・技術相談・研修",
+  "researchLabel": "研究分野",
+  "researchTitle": "メカニズムの解明から応用へ。",
+  "researchText": "材料科学と製造技術を結びつけ、研究および生産現場の課題に取り組みます。",
+  "r1": "溶接・接合プロセス",
+  "r1t": "溶融溶接、摩擦攪拌接合などの接合プロセスにおける熱源、材料の相互作用およびプロセス条件を研究します。",
+  "r2": "材料と微細組織",
+  "r2t": "材料、溶接部および異材接合部の製造プロセス、微細組織と特性の関係を解析します。",
+  "r3": "シミュレーションと最適化",
+  "r3t": "実験、シミュレーションとデータ解析を組み合わせ、メカニズムの理解、品質評価および製造プロセスの最適化に取り組みます。",
+  "servicesLabel": "技術サービス・試験",
+  "servicesTitle": "材料を理解し、<br>品質を高める。",
+  "servicesText": "分析手法、試料の準備および実施範囲について、専門スタッフにご相談ください。",
+  "s1": "表面形態観察と元素組成分析",
+  "s2": "結晶方位、相および結晶粒の解析",
+  "s3": "X線回折分析のご相談",
+  "s4": "機械的特性試験",
+  "s4t": "引張・曲げ・硬さ・衝撃試験",
+  "s5": "金属組織観察・試料作製",
+  "s5t": "マクロ観察、微細組織観察および分析用試料の作製",
+  "s6": "溶接技術コンサルティング",
+  "s6t": "プロセス開発、品質および技術移転のご相談",
+  "equipmentLabel": "研究設備",
+  "equipmentTitle": "より深い問いに、<br>応える設備。",
+  "equipmentText": "JWRI HUST-UOsakaの溶接研究と材料解析を支える主な設備をご紹介します。",
+  "e2": "ファイバーレーザ溶接",
+  "e3": "摩擦攪拌接合",
+  "e5": "粉体プラズマ",
+  "e6": "実体顕微鏡",
+  "trainingLabel": "教育・連携",
+  "trainingTitle": "研究室の知を、実践へ。",
+  "trainingText": "溶接・接合・材料分野の教育・研究と産業界のニーズをつなぎます。",
+  "trainingCta": "研修に関するご相談",
+  "contactLabel": "新たな連携の第一歩",
+  "contactTitle": "どのような課題に<br>取り組んでいますか？",
+  "contactText": "研究、試験または研修に関するご要望をお寄せください。専門スタッフが実施方法と範囲についてご相談に応じます。",
+  "contactCta": "メールで問い合わせる ↗",
+  "phone": "電話 / ZALO",
+  "addressLabel": "所在地",
+  "address": "ベトナム・ハノイ市バクマイ地区、タクアンブウ通り15番路地3号",
+  "affiliationLabel": "所属",
+  "affiliation": "ハノイ理工科大学（HUST）機械工学部",
+  "themeLabel": "表示スタイル",
+  "backTop": "ページ上部へ ↑",
+  "skip": "本文へ移動",
+  "visualTitle": "接合の科学",
+  "visualPlace": "ベトナム・ハノイ",
+  "visualTag": "境界を越える研究 ↗",
+  "visualMaterials": "材料 / エネルギー / イノベーション",
+  "r1Label": "01 / 接合プロセス",
+  "r2Label": "02 / 材料科学",
+  "r3Label": "03 / 計算工学",
+  "emailLabel": "メール",
+  "themeInstitute": "研究機関",
+  "themeTech": "テクノロジー",
+  "themeAcademic": "アカデミック",
+  "languageLabel": "言語を選択",
+  "navLabel": "メインナビゲーション",
+  "menuLabel": "メニューを開閉",
+  "visualAlt": "溶接によって二つの材料を接合する模式図"
+};
+const zh={
+  "top": "越南—日本科研合作",
+  "navAbout": "关于我们",
+  "navResearch": "科学研究",
+  "navServices": "技术服务",
+  "navEquipment": "仪器设备",
+  "navContact": "联系我们",
+  "heroLabel": "以连接科学，共创未来。",
+  "heroTitle": "连接材料。<br><em>创造价值。</em>",
+  "heroText": "JWRI HUST-UOsaka依托河内理工大学与大阪大学的合作，连接焊接、连接及材料领域的科学研究、人才培养与工业应用。",
+  "explore": "探索研究领域",
+  "collaborate": "洽谈合作",
+  "pillar1": "跨学科研究",
+  "pillar1s": "焊接 · 连接 · 材料",
+  "pillar2": "越日合作",
+  "pillar3": "产学合作",
+  "pillar3s": "检测 · 咨询 · 培训",
+  "researchLabel": "研究领域",
+  "researchTitle": "从机理研究到实际应用。",
+  "researchText": "融合材料科学与制造技术，解决科研与工业生产中的实际问题。",
+  "r1": "焊接与连接工艺",
+  "r1t": "研究熔焊、搅拌摩擦焊及其他连接工艺中的热源、材料相互作用和工艺参数。",
+  "r2": "材料与微观组织",
+  "r2t": "分析材料、焊缝及异种材料接头的制造工艺、微观组织与性能之间的关系。",
+  "r3": "模拟与优化",
+  "r3t": "结合实验、模拟与数据分析，理解机理、评价质量并优化制造工艺。",
+  "servicesLabel": "技术服务与检测",
+  "servicesTitle": "理解材料。<br>提升质量。",
+  "servicesText": "欢迎与技术团队沟通分析方法、试样制备及工作范围，制定合适的方案。",
+  "s1": "表面形貌观察与元素成分分析",
+  "s2": "晶体取向、物相与晶粒特征分析",
+  "s3": "X射线衍射分析需求咨询",
+  "s4": "力学性能测试",
+  "s4t": "拉伸、弯曲、硬度与冲击试验",
+  "s5": "金相分析与试样制备",
+  "s5t": "宏观观察、微观组织分析及分析试样制备",
+  "s6": "焊接技术咨询",
+  "s6t": "工艺开发、质量与技术转移咨询",
+  "equipmentLabel": "科研设施",
+  "equipmentTitle": "以先进工具，<br>探索更深问题。",
+  "equipmentText": "用于支持JWRI HUST-UOsaka焊接研究与材料表征的部分代表性设备。",
+  "e2": "光纤激光焊接",
+  "e3": "搅拌摩擦焊",
+  "e5": "等离子粉末工艺",
+  "e6": "体视显微镜",
+  "trainingLabel": "教育与合作",
+  "trainingTitle": "将实验室知识转化为实践。",
+  "trainingText": "连接焊接、连接及材料领域的教育、科研与企业需求。",
+  "trainingCta": "咨询培训需求",
+  "contactLabel": "开启合作",
+  "contactTitle": "您正在解决<br>什么技术难题？",
+  "contactText": "欢迎发送科研、检测或培训需求。技术团队将与您讨论实施方案和工作范围。",
+  "contactCta": "发送咨询邮件 ↗",
+  "phone": "电话 / ZALO",
+  "addressLabel": "地址",
+  "address": "越南河内市白梅坊谢光宝街15巷3号",
+  "affiliationLabel": "所属单位",
+  "affiliation": "河内理工大学（HUST）机械工程学院",
+  "themeLabel": "界面风格",
+  "backTop": "返回顶部 ↑",
+  "skip": "跳转到正文",
+  "visualTitle": "连接科学",
+  "visualPlace": "越南·河内",
+  "visualTag": "科研无界 ↗",
+  "visualMaterials": "材料 / 能源 / 创新",
+  "r1Label": "01 / 连接工艺",
+  "r2Label": "02 / 材料科学",
+  "r3Label": "03 / 计算工程",
+  "emailLabel": "电子邮箱",
+  "themeInstitute": "研究机构",
+  "themeTech": "科技",
+  "themeAcademic": "学术",
+  "languageLabel": "选择语言",
+  "navLabel": "主导航",
+  "menuLabel": "展开或收起菜单",
+  "visualAlt": "通过焊接连接两种材料的示意图"
+};
+Object.assign(en,{
+  "skip": "Skip to content",
+  "visualTitle": "THE SCIENCE OF CONNECTION",
+  "visualPlace": "HANOI, VIETNAM",
+  "visualTag": "RESEARCH WITHOUT BOUNDARIES ↗",
+  "visualMaterials": "MATERIALS / ENERGY / INNOVATION",
+  "r1Label": "01 / JOINING PROCESSES",
+  "r2Label": "02 / MATERIALS SCIENCE",
+  "r3Label": "03 / COMPUTATIONAL ENGINEERING",
+  "emailLabel": "EMAIL",
+  "themeInstitute": "Institute",
+  "themeTech": "Technology",
+  "themeAcademic": "Academic",
+  "languageLabel": "Choose language",
+  "navLabel": "Main navigation",
+  "menuLabel": "Toggle menu",
+  "visualAlt": "Illustration of two materials being joined by welding"
+});
 const nodes=[...document.querySelectorAll('[data-i]')];
 const vi=Object.fromEntries(nodes.map(n=>[n.dataset.i,n.innerHTML]));
+Object.assign(vi,{
+  "skip": "Chuyển đến nội dung",
+  "visualTitle": "KHOA HỌC GHÉP NỐI",
+  "visualPlace": "HÀ NỘI, VIỆT NAM",
+  "visualTag": "NGHIÊN CỨU KHÔNG BIÊN GIỚI ↗",
+  "visualMaterials": "VẬT LIỆU / NĂNG LƯỢNG / ĐỔI MỚI",
+  "r1Label": "01 / QUÁ TRÌNH GHÉP NỐI",
+  "r2Label": "02 / KHOA HỌC VẬT LIỆU",
+  "r3Label": "03 / KỸ THUẬT TÍNH TOÁN",
+  "emailLabel": "EMAIL",
+  "themeInstitute": "Viện nghiên cứu",
+  "themeTech": "Công nghệ",
+  "themeAcademic": "Học thuật",
+  "languageLabel": "Chọn ngôn ngữ",
+  "navLabel": "Điều hướng chính",
+  "menuLabel": "Mở/đóng menu",
+  "visualAlt": "Minh họa hai vật liệu được ghép nối bằng hàn"
+});
+const dictionaries={vi,en,ja,'zh-Hans':zh};
 let lang='vi';
-function setLang(next){lang=next;
-const dict=lang==='en'?en:vi;
+function setLang(next){
+lang=Object.hasOwn(dictionaries,next)?next:'vi';
+const dict=dictionaries[lang];
 nodes.forEach(n=>{if(dict[n.dataset.i]!==undefined)n.innerHTML=dict[n.dataset.i]});
 document.documentElement.lang=lang;
-document.getElementById('language').textContent=lang==='vi'?'EN':'VI';
-document.getElementById('language').setAttribute('aria-label',
-lang==='vi'?'Switch language to English':'Chuyển sang tiếng Việt');
-try{localStorage.setItem('jwri-language',
-lang)}catch(e){}}document.getElementById('language').addEventListener('click',
-()=>setLang(lang==='vi'?'en':'vi'));
+const language=document.getElementById('language');
+language.value=lang;
+language.setAttribute('aria-label',dict.languageLabel);
+document.getElementById('nav').setAttribute('aria-label',dict.navLabel);
+document.getElementById('menu').setAttribute('aria-label',dict.menuLabel);
+document.querySelector('.visual').setAttribute('aria-label',dict.visualAlt);
+document.querySelector('meta[name="description"]').content=dict.heroText;
+try{localStorage.setItem('jwri-language',lang)}catch(e){}
+}
+document.getElementById('language').addEventListener('change',e=>setLang(e.target.value));
 const theme=document.getElementById('theme');
 function setTheme(value){if(!['institute',
 'tech',
@@ -482,7 +689,7 @@ theme.value=value;
 try{localStorage.setItem('jwri-theme',
 value)}catch(e){}}theme.addEventListener('change',
 ()=>setTheme(theme.value));
-try{setLang(localStorage.getItem('jwri-language')==='en'?'en':'vi');
+try{setLang(localStorage.getItem('jwri-language')||'vi');
 setTheme(localStorage.getItem('jwri-theme')||'institute')}catch(e){}const menu=document.getElementById('menu'),nav=document.getElementById('nav');
 menu.addEventListener('click',
 ()=>{const open=nav.classList.toggle('open');
