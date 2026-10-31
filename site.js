@@ -313,7 +313,7 @@ const cookieValue=target?'/vi/'+target:'/vi/vi';
 document.cookie='googtrans='+cookieValue+';path=/;max-age=31536000;SameSite=Lax;Secure';
 }
 function initializeContentTranslation(){
-document.querySelectorAll('header,footer,[data-i],.brand,.tag,.equip-list span,a[href^="mailto:"],a[href^="tel:"],input,textarea,select,code').forEach(element=>{element.classList.add('notranslate');element.setAttribute('translate','no')});
+document.querySelectorAll('.top,header,footer,[data-i],.brand,.tag,.equip-list span,a[href^="mailto:"],a[href^="tel:"],input,textarea,select,code').forEach(element=>{element.classList.add('notranslate');element.setAttribute('translate','no')});
 const originalNotice=document.querySelector('.source-language');
 if(originalNotice&&lang!=='vi')originalNotice.textContent=translationMessages[lang].loading;
 const target=translationTargets[lang];
@@ -341,7 +341,7 @@ const selectTarget=()=>{const selector=provider.querySelector('.goog-te-combo');
 selectTarget();
 }catch(error){failed()}
 };
-const loader=document.createElement('script');loader.src='https://translate.google.com/translate_a/element.js?cb=jwriGoogleTranslateInit';loader.async=true;loader.onerror=failed;document.head.append(loader);
+const loader=document.createElement('script');loader.src='https://translate.google.com/translate_a/element.js?cb=jwriGoogleTranslateInit';loader.async=true;let retried=false;loader.onerror=()=>{if(retried){failed();return}retried=true;const retry=document.createElement('script');retry.src=loader.src+'&retry=1';retry.async=true;retry.onerror=failed;document.head.append(retry)};document.head.append(loader);
 setTimeout(()=>{if(!translated)failed()},25000);
 }
 initializeContentTranslation();
