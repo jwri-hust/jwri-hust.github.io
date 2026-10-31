@@ -1,0 +1,428 @@
+{
+  "source": "https://jwri-hust.com/",
+  "migrated_on": "2026-10-31",
+  "articles": [
+    {
+      "file": "ve-chung-toi.html",
+      "url": "https://jwri-hust.com/ve-chung-toi.html",
+      "title": "Giới thiệu",
+      "group": "about",
+      "image": "media-76946d558793.webp"
+    },
+    {
+      "file": "cac-lab-nghien-cuu.html",
+      "url": "https://jwri-hust.com/cac-lab-nghien-cuu.html",
+      "title": "Các Lab nghiên cứu",
+      "group": "labs",
+      "image": null
+    },
+    {
+      "file": "lien-he.html",
+      "url": "https://jwri-hust.com/lien-he.html",
+      "title": "Liên hệ",
+      "group": "contact",
+      "image": null
+    },
+    {
+      "file": "dich-vu-thu-nghiem-tu-van-chuyen-giao-cong-nghe-han.html",
+      "url": "https://jwri-hust.com/dich-vu-thu-nghiem-tu-van-chuyen-giao-cong-nghe-han.html",
+      "title": "Dịch vụ Thử nghiệm, tư vấn & chuyển giao công nghệ hàn",
+      "group": "services",
+      "image": null
+    },
+    {
+      "file": "dao-tao-va-chung-chi.html",
+      "url": "https://jwri-hust.com/dao-tao-va-chung-chi.html",
+      "title": "Đào tạo và chứng chỉ",
+      "group": "training",
+      "image": null
+    },
+    {
+      "file": "nghien-cuu-va-cong-bo-khoa-hoc-2023-2026.html",
+      "url": "https://jwri-hust.com/nghien-cuu-va-cong-bo-khoa-hoc-2023-2026.html",
+      "title": "Nghiên cứu và công bố khoa học 2023-2026",
+      "group": "research",
+      "image": null
+    },
+    {
+      "file": "may-cat-day-gia-cong-tia-lua-dien-edm-fanuc.html",
+      "url": "https://jwri-hust.com/may-cat-day-gia-cong-tia-lua-dien-edm-fanuc.html",
+      "title": "Máy cắt dây gia công tia lửa điện EDM Fanuc",
+      "group": "equipment",
+      "image": "media-75f2c513b8ee.webp"
+    },
+    {
+      "file": "tram-may-tinh-tinh-nang-cao-hpc-phuc-vu-mo-phong-han.html",
+      "url": "https://jwri-hust.com/tram-may-tinh-tinh-nang-cao-hpc-phuc-vu-mo-phong-han.html",
+      "title": "Trạm máy tính tính năng cao HPC phục vụ mô phỏng hàn",
+      "group": "equipment",
+      "image": "media-a2a13cfefc3e.webp"
+    },
+    {
+      "file": "may-thu-moi-chu-ky-thuy-luc-20-tan.html",
+      "url": "https://jwri-hust.com/may-thu-moi-chu-ky-thuy-luc-20-tan.html",
+      "title": "Máy thử mỏi chu kỳ thủy lực 20 tấn",
+      "group": "equipment",
+      "image": "media-221db9e85e39.webp"
+    },
+    {
+      "file": "may-thu-va-dap-con-lac-charpy-490j-tu-dong.html",
+      "url": "https://jwri-hust.com/may-thu-va-dap-con-lac-charpy-490j-tu-dong.html",
+      "title": "Máy thử va đập con lắc Charpy 490J tự động",
+      "group": "equipment",
+      "image": "media-ebb956952dcd.webp"
+    },
+    {
+      "file": "may-thu-keo-uon-van-nang-amsler-50-tan.html",
+      "url": "https://jwri-hust.com/may-thu-keo-uon-van-nang-amsler-50-tan.html",
+      "title": "Máy thử kéo - uốn vạn năng Amsler 50 tấn",
+      "group": "equipment",
+      "image": "media-036ad4c00d75.webp"
+    },
+    {
+      "file": "may-thu-mo-phong-chu-trinh-co-nhiet-formaster.html",
+      "url": "https://jwri-hust.com/may-thu-mo-phong-chu-trinh-co-nhiet-formaster.html",
+      "title": "Máy thử mô phỏng chu trình cơ nhiệt Formaster",
+      "group": "equipment",
+      "image": "media-2d3282e5e213.webp"
+    },
+    {
+      "file": "vuon-ra-bien-lon-nam-bat-co-hoi-hoc-tap-va-lam-viec-tai-nhat-ban-cung-ncm-han-cong-nghe-kim-loai-54592525.html",
+      "url": "https://jwri-hust.com/vuon-ra-bien-lon-nam-bat-co-hoi-hoc-tap-va-lam-viec-tai-nhat-ban-cung-ncm-han-cong-nghe-kim-loai-54592525.html",
+      "title": "VƯƠN RA BIỂN LỚN: NẮM BẮT CƠ HỘI HỌC TẬP VÀ LÀM VIỆC TẠI NHẬT BẢN CÙNG NCM HÀN & CÔNG NGHỆ KIM LOẠI",
+      "group": "news",
+      "image": null
+    },
+    {
+      "file": "vuon-ra-bien-lon-nam-bat-co-hoi-hoc-tap-va-lam-viec-tai-nhat-ban-cung-ncm-han-cong-nghe-kim-loai.html",
+      "url": "https://jwri-hust.com/vuon-ra-bien-lon-nam-bat-co-hoi-hoc-tap-va-lam-viec-tai-nhat-ban-cung-ncm-han-cong-nghe-kim-loai.html",
+      "title": "VƯƠN RA BIỂN LỚN: NẮM BẮT CƠ HỘI HỌC TẬP VÀ LÀM VIỆC TẠI NHẬT BẢN CÙNG NCM HÀN & CÔNG NGHỆ KIM LOẠI",
+      "group": "news",
+      "image": null
+    },
+    {
+      "file": "ban-tin-hoat-dong-quy-2-2026-vung-buoc-phat-trien-va-mo-rong-mang-luoi-quoc-te-tai-jwri-hust-uosaka.html",
+      "url": "https://jwri-hust.com/ban-tin-hoat-dong-quy-2-2026-vung-buoc-phat-trien-va-mo-rong-mang-luoi-quoc-te-tai-jwri-hust-uosaka.html",
+      "title": "BẢN TIN HOẠT ĐỘNG QUÝ 2/2026: VỮNG BƯỚC PHÁT TRIỂN VÀ MỞ RỘNG MẠNG LƯỚI QUỐC TẾ TẠI JWRI HUST-UOsaka",
+      "group": "news",
+      "image": null
+    },
+    {
+      "file": "soi-noi-chuoi-hoat-dong-khoi-dau-nam-moi-2026-tai-trung-tam-jwri-hust-uosaka-ket-noi-sang-tao-va-vuon-tam-quoc-te.html",
+      "url": "https://jwri-hust.com/soi-noi-chuoi-hoat-dong-khoi-dau-nam-moi-2026-tai-trung-tam-jwri-hust-uosaka-ket-noi-sang-tao-va-vuon-tam-quoc-te.html",
+      "title": "SÔI NỔI CHUỖI HOẠT ĐỘNG KHỞI ĐẦU NĂM MỚI 2026 TẠI TRUNG TÂM JWRI HUST-UOsaka: KẾT NỐI, SÁNG TẠO VÀ VƯƠN TẦM QUỐC TẾ",
+      "group": "news",
+      "image": null
+    },
+    {
+      "file": "gs-ts-pham-van-sang.html",
+      "url": "https://jwri-hust.com/gs-ts-pham-van-sang.html",
+      "title": "GS. TS. Phạm Văn Sáng",
+      "group": "members",
+      "image": "media-0aedd475374c.webp"
+    },
+    {
+      "file": "ts-han-le-duy.html",
+      "url": "https://jwri-hust.com/ts-han-le-duy.html",
+      "title": "TS. Hán Lê Duy",
+      "group": "members",
+      "image": "media-262906c2efa1.webp"
+    },
+    {
+      "file": "ts-trinh-quang-ngoc.html",
+      "url": "https://jwri-hust.com/ts-trinh-quang-ngoc.html",
+      "title": "TS. Trịnh Quang Ngọc",
+      "group": "members",
+      "image": "media-ccf72b91d19b.webp"
+    },
+    {
+      "file": "pgs-ts-gvcc-bui-van-hanh.html",
+      "url": "https://jwri-hust.com/pgs-ts-gvcc-bui-van-hanh.html",
+      "title": "PGS.TS.GVCC Bùi Văn Hạnh",
+      "group": "members",
+      "image": "media-8498ec492ca2.webp"
+    },
+    {
+      "file": "pgs-ts-nguyen-tien-duong.html",
+      "url": "https://jwri-hust.com/pgs-ts-nguyen-tien-duong.html",
+      "title": "PGS.TS. Nguyễn Tiến Dương",
+      "group": "members",
+      "image": "media-1c80e5ceb61d.webp"
+    },
+    {
+      "file": "ts-tran-lam.html",
+      "url": "https://jwri-hust.com/ts-tran-lam.html",
+      "title": "TS. Trần Lâm",
+      "group": "members",
+      "image": "media-53f6e58c5974.webp"
+    },
+    {
+      "file": "ts-phan-huy-le.html",
+      "url": "https://jwri-hust.com/ts-phan-huy-le.html",
+      "title": "TS. Phan Huy Lê",
+      "group": "members",
+      "image": "media-7c8c5d7827a1.webp"
+    },
+    {
+      "file": "pgs-ts-vu-dinh-toai.html",
+      "url": "https://jwri-hust.com/pgs-ts-vu-dinh-toai.html",
+      "title": "PGS. TS. Vũ Đình Toại",
+      "group": "members",
+      "image": "media-a1871dbb38f9.webp"
+    },
+    {
+      "file": "ts-nguyen-thanh-tuan.html",
+      "url": "https://jwri-hust.com/ts-nguyen-thanh-tuan.html",
+      "title": "TS. Nguyễn Thanh Tuấn",
+      "group": "members",
+      "image": "media-c7429347b57a.webp"
+    },
+    {
+      "file": "ts-dinh-hong-bo.html",
+      "url": "https://jwri-hust.com/ts-dinh-hong-bo.html",
+      "title": "TS. Đinh Hồng Bộ",
+      "group": "members",
+      "image": "media-b6d9f9d7a439.webp"
+    },
+    {
+      "file": "may-do-do-cung-vickers-tu-dong.html",
+      "url": "https://jwri-hust.com/may-do-do-cung-vickers-tu-dong.html",
+      "title": "Máy đo độ cứng Vickers tự động",
+      "group": "equipment",
+      "image": "media-25cea3cf8014.webp"
+    },
+    {
+      "file": "kinh-hien-vi-ky-thuat-so-do-phan-giai-cao-keyence.html",
+      "url": "https://jwri-hust.com/kinh-hien-vi-ky-thuat-so-do-phan-giai-cao-keyence.html",
+      "title": "Kính hiển vi kỹ thuật số độ phân giải cao Keyence",
+      "group": "equipment",
+      "image": "media-5e36f263a8a6.webp"
+    },
+    {
+      "file": "may-han-plasma-bot.html",
+      "url": "https://jwri-hust.com/may-han-plasma-bot.html",
+      "title": "Máy hàn Plasma bột",
+      "group": "equipment",
+      "image": "media-e1d35b44323f.webp"
+    },
+    {
+      "file": "cobot-cooper.html",
+      "url": "https://jwri-hust.com/cobot-cooper.html",
+      "title": "Hệ thống Cobot hàn Lincoln Electric",
+      "group": "equipment",
+      "image": "media-af6b19841d54.webp"
+    },
+    {
+      "file": "laser-6kw.html",
+      "url": "https://jwri-hust.com/laser-6kw.html",
+      "title": "Hệ thống máy hàn Laser Fiber 6kW",
+      "group": "equipment",
+      "image": "media-6427cbdcbbd6.webp"
+    },
+    {
+      "file": "robot-yaskawa.html",
+      "url": "https://jwri-hust.com/robot-yaskawa.html",
+      "title": "Robot Yaskawa",
+      "group": "equipment",
+      "image": "media-840c908d9619.webp"
+    },
+    {
+      "file": "sem-jsm-it800hl.html",
+      "url": "https://jwri-hust.com/sem-jsm-it800hl.html",
+      "title": "Kính hiển vi điện tử quét FE-SEM tích hợp phổ EDX/EBSD",
+      "group": "equipment",
+      "image": "media-1494e1a5f623.webp"
+    },
+    {
+      "file": "thiet-bi-han-fsw.html",
+      "url": "https://jwri-hust.com/thiet-bi-han-fsw.html",
+      "title": "Thiết bị hàn ma sát khuấy FSW",
+      "group": "equipment",
+      "image": "media-75785641c999.webp"
+    },
+    {
+      "file": "xrd-smartlab-se.html",
+      "url": "https://jwri-hust.com/xrd-smartlab-se.html",
+      "title": "Máy nhiễu xạ tia X (XRD) phân tích cấu trúc pha & ứng suất",
+      "group": "equipment",
+      "image": "media-9e177c98a5e8.webp"
+    },
+    {
+      "file": "xrd.html",
+      "url": "https://jwri-hust.com/xrd.html",
+      "title": "XRD",
+      "group": "services",
+      "image": null
+    },
+    {
+      "file": "sem-eds.html",
+      "url": "https://jwri-hust.com/sem-eds.html",
+      "title": "SEM/EDS",
+      "group": "services",
+      "image": null
+    },
+    {
+      "file": "ebsd.html",
+      "url": "https://jwri-hust.com/ebsd.html",
+      "title": "EBSD",
+      "group": "services",
+      "image": null
+    },
+    {
+      "file": "chup-anh-macro-to-chuc-te-vi.html",
+      "url": "https://jwri-hust.com/chup-anh-macro-to-chuc-te-vi.html",
+      "title": "CHỤP ẢNH MACRO/TỔ CHỨC TẾ VI",
+      "group": "services",
+      "image": null
+    },
+    {
+      "file": "do-do-cung-hv-hrc-hb-hk.html",
+      "url": "https://jwri-hust.com/do-do-cung-hv-hrc-hb-hk.html",
+      "title": "ĐO ĐỘ CỨNG (HV, HRC, HB, HK)",
+      "group": "services",
+      "image": null
+    },
+    {
+      "file": "thu-uon.html",
+      "url": "https://jwri-hust.com/thu-uon.html",
+      "title": "THỬ UỐN",
+      "group": "services",
+      "image": null
+    },
+    {
+      "file": "thu-keo.html",
+      "url": "https://jwri-hust.com/thu-keo.html",
+      "title": "THỬ KÉO",
+      "group": "services",
+      "image": null
+    },
+    {
+      "file": "chuan-bi-cac-loai-mau.html",
+      "url": "https://jwri-hust.com/chuan-bi-cac-loai-mau.html",
+      "title": "CHUẨN BỊ CÁC LOẠI MẪU",
+      "group": "services",
+      "image": null
+    },
+    {
+      "file": "thu-dai-va-dap-charpy-test.html",
+      "url": "https://jwri-hust.com/thu-dai-va-dap-charpy-test.html",
+      "title": "THỬ DAI VA ĐẬP (CHARPY TEST)",
+      "group": "services",
+      "image": null
+    },
+    {
+      "file": "ks-tran-thi-mai-doan.html",
+      "url": "https://jwri-hust.com/ks-tran-thi-mai-doan.html",
+      "title": "KS. Trần Thị Mai Doan",
+      "group": "members",
+      "image": "media-51ad47f89e04.webp"
+    },
+    {
+      "file": "ks-nguyen-manh-tuong.html",
+      "url": "https://jwri-hust.com/ks-nguyen-manh-tuong.html",
+      "title": "KS. Nguyễn Mạnh Tường",
+      "group": "members",
+      "image": "media-b5342348a4ab.webp"
+    }
+  ],
+  "images": {
+    "https://jwri-hust.com/images/logo-6.png": "media-84485beb2b2a.webp",
+    "https://jwri-hust.com/images/slideshow/CVN.png": "media-ebb956952dcd.webp",
+    "https://jwri-hust.com/images/slideshow/LE%20Cobot.jpg": "media-af6b19841d54.webp",
+    "https://jwri-hust.com/images/slideshow/Tensile.png": "media-e2e4eac41b72.webp",
+    "https://jwri-hust.com/images/slideshow/sl1.png": "media-bf6213a96597.webp",
+    "https://jwri-hust.com/images/slideshow/XRD.png": "media-9e177c98a5e8.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item4255381792988967_L.jpg": "media-b91fc128cbd9.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item7865101792945270_M.jpg": "media-85585610a7af.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item5326441792945744_M.jpg": "media-758fc0c5906a.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item9532961792948343_M.jpg": "media-ffdb367a08ee.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/resized/-c400ic_400x400.jpg": "media-319ce7cd0b30.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/resized/hpc5000-_400x400.jpg": "media-a2a13cfefc3e.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/resized/fatigue_400x400.png": "media-d2188f552d4a.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/resized/cvn_400x400.png": "media-bacbdd3719fe.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/resized/tensile_400x400.png": "media-036ad4c00d75.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/resized/fomaster_400x400.png": "media-6a73c1d8627c.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item6660931792395827_M.jpg": "media-fa8fbacb133a.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item7443101792395611_M.jpg": "media-c429629a9d5d.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item1839831792394793_M.jpg": "media-8e55ab2b2c8d.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item8783551792394113_M.jpg": "media-0ad993f3ad6b.webp",
+    "https://jwri-hust.com/images/dt/jwri-petrovietnam.jpg": "media-65a92485f9ed.webp",
+    "https://jwri-hust.com/images/dt/jwri-alpha-ecc.jpg": "media-141c76d81c93.webp",
+    "https://jwri-hust.com/images/dt/messer.png": "media-8bf51628c931.webp",
+    "https://jwri-hust.com/images/dt/namvuong.png": "media-4e8762b41534.webp",
+    "https://jwri-hust.com/images/dt/qhd-viwelco.png": "media-c845ff1a12c7.webp",
+    "https://jwri-hust.com/images/dt/technokom.png": "media-89a8c4441b9f.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item4255381792988967_S.jpg": "media-76946d558793.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item4915581792485043_L.jpg": "media-0aedd475374c.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item7090971792943770_L.jpg": "media-262906c2efa1.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item6348011792477983_L.jpg": "media-ccf72b91d19b.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item3920951792381133_L.jpg": "media-8498ec492ca2.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item9598251792381039_L.jpg": "media-1c80e5ceb61d.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item8827381792380944_L.jpg": "media-53f6e58c5974.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item9907111792380798_L.jpg": "media-7c8c5d7827a1.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item4561931792380820_L.jpg": "media-a1871dbb38f9.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item4031711792380472_L.jpg": "media-c7429347b57a.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item1209781792380255_L.jpg": "media-b6d9f9d7a439.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item7865101792945270_S.jpg": "media-b2f8a42309de.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/resized/ati-dm2-2-vicker_400x400.jpg": "media-88a0fac8dc0d.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/resized/vhx-7000n_400x400.jpg": "media-5e36f263a8a6.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/resized/plasma_400x400.png": "media-8e5fd3f83831.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/resized/le-cobot_400x400.jpg": "media-ac343355bbbc.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/resized/laser_400x400.png": "media-6427cbdcbbd6.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/resized/robot-yaskawa_400x400.jpg": "media-cc2cb91d7e6a.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/resized/sem-jsm-it800hl_400x400.jpg": "media-dec3bf46cc4d.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/resized/fsw_400x400.png": "media-658014cb06cc.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/resized/xrd_400x400.png": "media-4e9477bbf09a.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item9532961792948343_S.jpg": "media-0b4f375e2139.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item6660931792395827_S.jpg": "media-c88577b006ac.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item7443101792395611_S.jpg": "media-d1488bd57797.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item1839831792394793_S.jpg": "media-8a477d6fbf89.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item8783551792394113_S.jpg": "media-18b92489bf8e.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/-c400ic.jpg": "media-75f2c513b8ee.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/fatigue.png": "media-221db9e85e39.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/cvn.png": "media-ebb956952dcd.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/fomaster.png": "media-2d3282e5e213.webp",
+    "https://jwri-hust.com/images/news-thang6-1.jpg": "media-8edecba451c8.webp",
+    "https://jwri-hust.com/images/news-thang6-2.jpg": "media-0b0370a178c3.webp",
+    "https://jwri-hust.com/images/news-thang-5-1.jpg": "media-af339cef1a37.webp",
+    "https://jwri-hust.com/images/news-thang-5-2.jpg": "media-74db1e8356c8.webp",
+    "https://jwri-hust.com/images/news-thang-5-3.jpg": "media-e2aefdfaface.webp",
+    "https://jwri-hust.com/images/news-q2-1.jpg": "media-d4718974e0c1.webp",
+    "https://jwri-hust.com/images/news-q2-2.jpg": "media-548eef933022.webp",
+    "https://jwri-hust.com/images/news-q2-3.jpg": "media-2bc46873c746.webp",
+    "https://jwri-hust.com/images/news-q2-4.jpg": "media-14f60579ab80.webp",
+    "https://jwri-hust.com/images/news-q2-5.jpg": "media-831df3f69294.webp",
+    "https://jwri-hust.com/images/news-q2-6.jpg": "media-0707d14402cd.webp",
+    "https://jwri-hust.com/images/news-q2-7.jpg": "media-265382a5d70b.webp",
+    "https://jwri-hust.com/images/news-q1-1.JPG": "media-7d1b86b2ed46.webp",
+    "https://jwri-hust.com/images/news-q1-2.JPG": "media-825061c2d1ab.webp",
+    "https://jwri-hust.com/images/news-q1-3.jpg": "media-8eb54f1017b9.webp",
+    "https://jwri-hust.com/images/news-q1-4.jpg": "media-96c2a1435016.webp",
+    "https://jwri-hust.com/images/news-q1-5.jpg": "media-32db345539bb.webp",
+    "https://jwri-hust.com/images/news-q1-7.jpg": "media-2eacb8bc2eac.webp",
+    "https://jwri-hust.com/images/news-q1-8.jpg": "media-3d978d477b09.webp",
+    "https://jwri-hust.com/images/news-q1-10.jpg": "media-7e89f37851fd.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item4255381792988967_XL.jpg": "media-4b50cf70bb28.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/ati-dm2-2-vicker.jpg": "media-25cea3cf8014.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/plasma.png": "media-e1d35b44323f.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/le-cobot.jpg": "media-af6b19841d54.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/robot-yaskawa.jpg": "media-840c908d9619.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/sem-jsm-it800hl.jpg": "media-1494e1a5f623.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/fsw.png": "media-75785641c999.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/xrd.png": "media-9e177c98a5e8.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item2695891792380053_L.jpg": "media-51ad47f89e04.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item6040191792379628_L.jpg": "media-b5342348a4ab.webp",
+    "https://jwri-hust.com/media/k2/items/cache/item5326441792945744_S.jpg": "media-758fc0c5906a.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/hpc5000-.jpg": "media-a2a13cfefc3e.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/tensile.png": "media-036ad4c00d75.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/vhx-7000n.jpg": "media-5e36f263a8a6.webp",
+    "https://jwri-hust.com/images/stories/virtuemart/product/laser.png": "media-6427cbdcbbd6.webp"
+  },
+  "missing_images": [],
+  "counts": {
+    "articles": 46,
+    "images": 83,
+    "members": 12,
+    "equipment": 15
+  }
+}

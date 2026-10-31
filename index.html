@@ -1,247 +1,61 @@
-<!doctype html>
-<html lang="vi">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>JWRI HUST-UOsaka | Welding & Joining Research</title>
-<meta name="description" content="JWRI HUST-UOsaka — Nghiên cứu, đào tạo và dịch vụ thử nghiệm trong công nghệ hàn, ghép nối và vật liệu.">
-<meta name="theme-color" content="#102e42">
-<style>
-:root{--ink:#102e42;--accent:#b7472e;--paper:#faf9f5;--soft:#eeeee6;--line:#d9dedc;--muted:#536772;--font:Georgia,serif}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:110px}
-body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-a{color:inherit;text-decoration:none}
-a:hover{color:var(--accent)}
-button,select{font:inherit}
-button,a,select{touch-action:manipulation}
-a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
-.wrap{width:min(1180px,90%);margin:auto}
-.top{background:var(--ink);color:#fff;font-size:11px;letter-spacing:.13em;padding:9px 0}
-.top .wrap{display:flex;justify-content:space-between;gap:14px}
-.top a{color:#fff}
-header{position:sticky;top:0;z-index:9;background:var(--paper);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:21px 0}
-.brand{font-size:24px;font-weight:800;letter-spacing:-1px;line-height:1.15}
-.brand small{display:block;font-size:9px;font-weight:500;letter-spacing:.2em;margin-top:7px}
-nav{display:flex;gap:24px;font-size:13px;font-weight:600;align-items:center}
-.tools{display:flex;gap:12px;align-items:center}
-.lang{border:1px solid var(--line);background:transparent;padding:6px 10px;color:var(--ink);cursor:pointer}
-.menu{display:none}
-main{overflow:hidden}
-.hero{display:grid;grid-template-columns:1.1fr 1fr;min-height:660px;align-items:center;gap:7%;padding:72px 0}
-.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:700;display:flex;align-items:center;gap:12px}
-.eyebrow:before{content:"";width:25px;height:2px;background:var(--accent)}
-h1,h2,h3,p{margin-top:0}
-h1,h2{font-family:var(--font);font-weight:400;letter-spacing:-.045em;line-height:1.13}
-h1{font-size:clamp(43px,4.8vw,68px);margin:25px 0}
-h1 em{font-style:normal;color:var(--accent)}
-.lead{color:var(--muted);max-width:540px;font-size:16px;line-height:1.85}
-.actions{display:flex;gap:18px;flex-wrap:wrap;margin-top:32px}
-.btn{display:inline-flex;align-items:center;gap:28px;background:var(--ink);color:#fff;padding:14px 21px;font-size:13px;border:1px solid var(--ink)}
-.btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
-.btn.light{background:transparent;color:var(--ink);border-color:var(--line)}
-.visual{background:var(--ink);color:#fff;position:relative;padding:32px;min-height:450px;display:flex;flex-direction:column;justify-content:space-between}
-.visual svg{width:100%;height:270px}
-.visual-caption{display:flex;justify-content:space-between;gap:18px;font-size:10px;letter-spacing:.13em;border-top:1px solid #ffffff35;padding-top:20px}
-.visual:after{content:"";position:absolute;right:-15px;bottom:-15px;border-right:1px solid var(--accent);border-bottom:1px solid var(--accent);width:90px;height:90px}
-.strip{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.strip div{padding:24px 30px;border-right:1px solid var(--line)}
-.strip div:first-child{padding-left:0}
-.strip div:last-child{border:0}
-.strip strong{display:block;font-size:16px}
-.strip span{font-size:12px;color:var(--muted)}
-section{padding:90px 0;border-bottom:1px solid var(--line)}
-.section-head{display:flex;align-items:end;justify-content:space-between;gap:40px;margin-bottom:38px}
-.section-head h2{font-size:clamp(32px,4vw,46px);margin:18px 0 0}
-.section-head p{max-width:410px;font-size:14px;color:var(--muted);margin:0}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
-.card{border-top:2px solid var(--ink);padding:24px 0}
-.num{font-size:11px;color:var(--accent);letter-spacing:.1em}
-.card h3{font-size:21px;margin:18px 0 12px;line-height:1.3}
-.card p{font-size:14px;color:var(--muted)}
-.card .tag{display:inline-block;font-size:10px;letter-spacing:.06em;border:1px solid var(--line);padding:4px 8px;margin:3px 2px 0 0}
-.services{background:var(--soft)}
-.service-list{display:grid;grid-template-columns:1fr 1fr;gap:0 45px}
-.service{padding:21px 0;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:20px}
-.service b{font-size:16px}
-.service small{display:block;color:var(--muted);font-size:12px;margin-top:5px}
-.service .arrow{font-size:22px;color:var(--accent)}
-.equip{display:grid;grid-template-columns:1fr 1fr;gap:50px}
-.equip-list div{display:flex;justify-content:space-between;gap:25px;padding:15px 0;border-bottom:1px solid var(--line);font-size:13px}
-.equip-list span{color:var(--muted)}
-.quote{background:var(--ink);color:#fff;padding:38px;display:flex;flex-direction:column;justify-content:space-between}
-.quote h3{font:30px/1.35 var(--font);margin:12px 0 25px}
-.quote p{font-size:14px;color:#d0dce2}
-.quote .btn{border-color:#ffffff60}
-.contact{background:var(--ink);color:#fff}
-.contact h2{font-size:clamp(35px,4.5vw,56px);margin:20px 0}
-.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:10%}
-.contact p{color:#d0dce2}
-.contact a:hover{color:#ffbc99}
-.contact-details{padding-top:35px}
-.contact-details div{border-bottom:1px solid #ffffff30;padding:15px 0}
-.contact-details small{display:block;font-size:10px;letter-spacing:.12em;color:#b8cbd5}
-.contact .btn{background:var(--paper);color:var(--ink)}
-footer{padding:30px 0}
-.footer-line{display:flex;justify-content:space-between;gap:25px;align-items:center}
-.footer-line p{font-size:11px;color:var(--muted);margin:0}
-.theme-control{display:flex;align-items:center;gap:10px;font-size:11px}
-.theme-control select{font-size:11px;padding:6px;background:var(--paper);color:var(--ink);border:1px solid var(--line)}
-body[data-theme="tech"]{--ink:#102d47;--accent:#087f8c;--paper:#f5f8fb;--soft:#e8eff5;--font:system-ui,sans-serif}
-body[data-theme="academic"]{--ink:#343626;--accent:#806027;--paper:#fffdf6;--soft:#f1edde;--font:Georgia,serif}
-body[data-theme="tech"] .visual{background:linear-gradient(135deg,#102d47,#08616c)}
-.skip{position:absolute;left:12px;top:-100px;z-index:20;background:#fff;padding:8px}
-.skip:focus{top:5px}
-@media(max-width:980px){nav{gap:13px;font-size:12px}
-.brand{font-size:20px}
-.hero{gap:5%;min-height:590px}
-.visual{padding:22px;min-height:380px}
-.visual svg{height:230px}
-}
-@media(max-width:760px){.top .wrap span:last-child{display:none}
-.bar{padding:16px 0;flex-wrap:wrap}
-.menu{display:block;background:transparent;color:var(--ink);border:1px solid var(--line);padding:6px 10px;cursor:pointer}
-nav{display:none;width:100%;order:3;flex-wrap:wrap;padding-top:10px}
-nav.open{display:flex}
-.hero{grid-template-columns:1fr;padding:45px 0;gap:40px}
-.visual{min-height:330px}
-.visual svg{height:210px}
-.strip div{padding:18px 13px}
-.strip strong{font-size:13px}
-.strip span{font-size:10px}
-section{padding:58px 0}
-.section-head{display:block}
-.section-head p{margin-top:20px}
-.grid,.equip,.contact-grid{grid-template-columns:1fr;gap:22px}
-.service-list{grid-template-columns:1fr}
-.footer-line{align-items:start;flex-direction:column}
-.contact-details{padding-top:0}
-}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
-}
-
-html:lang(ja) h1,html:lang(ja) h2,html:lang(ja) h3{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;letter-spacing:0;line-height:1.4}
-html:lang(zh-Hans) h1,html:lang(zh-Hans) h2,html:lang(zh-Hans) h3{font-family:"Noto Serif CJK SC","Songti SC",serif;letter-spacing:0;line-height:1.4}
-html:lang(ja) .eyebrow,html:lang(zh-Hans) .eyebrow{letter-spacing:.06em}
-@media(max-width:1100px){.bar{flex-wrap:wrap}nav{order:3;width:100%;justify-content:center}}
-@media(max-width:760px){.brand{font-size:18px}.brand small{font-size:8px}.tools{gap:8px}.lang{font-size:12px}.visual-caption{flex-wrap:wrap}}
-@media(max-width:390px){.brand{width:100%}.tools{margin-left:auto}}
-.mobile-menu{display:none}
-@media(max-width:760px){
-html{scroll-padding-top:170px}
-header .bar{gap:12px;padding:12px 0}
-header .brand{width:100%;font-size:21px}
-header .brand small{font-size:8px;letter-spacing:.14em}
-header .tools{width:100%;justify-content:space-between;gap:12px}
-header #nav{display:none}
-header .lang{min-height:44px;max-width:calc(100% - 60px);font-size:14px;background:var(--paper)}
-.mobile-menu{display:block}
-.mobile-menu summary{display:flex;align-items:center;justify-content:center;min-width:48px;min-height:44px;cursor:pointer;border:1px solid var(--line);list-style:none;color:var(--ink);background:var(--paper);border-radius:3px}
-.mobile-menu summary::-webkit-details-marker{display:none}
-.mobile-menu summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-.mobile-menu[open] summary{background:var(--ink);color:var(--paper)}
-header #mobile-nav{position:absolute;top:100%;left:0;right:0;display:grid;width:100%;gap:0;padding:8px 5% 16px;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 12px 20px #102e4215;max-height:65vh;overflow-y:auto}
-header #mobile-nav a{display:flex;align-items:center;min-height:48px;padding:10px 12px;font-size:16px;border-bottom:1px solid var(--line)}
-header #mobile-nav a:hover,header #mobile-nav a:focus-visible{background:var(--soft);color:var(--accent)}
-.hero{padding-top:32px}
-.visual-caption{gap:12px;line-height:1.7}
-.equip-list div{flex-wrap:wrap;gap:6px 16px}
-.contact-details a{overflow-wrap:anywhere}
-}
-</style>
-</head>
-<body>
-<a class="skip" href="#main" data-i="skip">Skip to content</a>
-<div class="top">
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Welding and Joining Research Institute | JWRI HUST-UOsaka</title><meta name="description" content="Welding and Joining Research Institute"><meta name="theme-color" content="#102e42"><link rel="preload" href="font-sans-400.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="font-serif-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="site.css"><script src="site.js" defer></script></head><body data-page="home"><a class="skip" href="#main" data-i="skip">Chuyển đến nội dung</a><div class="top">
 <div class="wrap">
 <span>HUST × OSAKA UNIVERSITY</span>
 <span data-i="top">HỢP TÁC NGHIÊN CỨU VIỆT NAM – NHẬT BẢN</span>
 </div>
-</div>
-<header>
+</div><header>
 <div class="wrap bar">
-<a href="#" class="brand">JWRI <span style="font-weight:400">HUST-UOsaka</span>
-<small>WELDING AND JOINING RESEARCH INSTITUTE</small>
-</a>
-<nav id="nav" aria-label="Main navigation">
-<a href="#about" data-i="navAbout">Giới thiệu</a>
-<a href="#research" data-i="navResearch">Nghiên cứu</a>
-<a href="#services" data-i="navServices">Dịch vụ</a>
-<a href="#equipment" data-i="navEquipment">Thiết bị</a>
-<a href="#contact" data-i="navContact">Liên hệ</a>
-</nav>
+<a class="brand" href="index.html"><img alt="JWRI HUST-UOsaka" src="media-84485beb2b2a.webp"/><span class="brand-text">JWRI HUST-UOsaka<small>WELDING AND JOINING RESEARCH INSTITUTE</small></span></a>
+<nav aria-label="Main navigation" id="nav"><a data-i="navHome" href="index.html">Trang chủ</a>
+<a data-i="navAbout" href="ve-chung-toi.html">Giới thiệu</a>
+<a data-i="navMembers" href="thanh-vien.html">Thành viên</a>
+<a data-i="navLabs" href="cac-lab-nghien-cuu.html">Các Lab</a>
+<a data-i="navServices" href="dich-vu-thu-nghiem.html">Dịch vụ</a>
+<a data-i="navTraining" href="dao-tao-chung-chi.html">Đào tạo</a>
+<a data-i="navEquipment" href="trang-thiet-bi.html">Thiết bị</a>
+<a data-i="navResearch" href="nghien-cuu-cong-bo.html">Nghiên cứu</a>
+<a data-i="navNews" href="tin-tuc-su-kien.html">Tin tức</a>
+<a data-i="navBooking" href="booking.html">Đăng ký</a>
+<a data-i="navContact" href="lien-he.html">Liên hệ</a></nav>
 <div class="tools">
-<select class="lang" id="language" aria-label="Chọn ngôn ngữ">
-<option value="vi" lang="vi">Tiếng Việt</option>
-<option value="en" lang="en">English</option>
-<option value="ja" lang="ja">日本語</option>
-<option value="zh-Hans" lang="zh-Hans">中文（简体）</option>
+<select aria-label="Chọn ngôn ngữ" class="lang" id="language">
+<option lang="vi" value="vi">Tiếng Việt</option>
+<option lang="en" value="en">English</option>
+<option lang="ja" value="ja">日本語</option>
+<option lang="zh-Hans" value="zh-Hans">中文（简体）</option>
 </select>
 <details class="mobile-menu" id="mobile-menu">
-<summary id="menu" aria-label="Mở/đóng menu" aria-controls="mobile-nav"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></summary>
-<nav id="mobile-nav" aria-label="Điều hướng chính">
-<a href="#about" data-i="navAbout">Giới thiệu</a>
-<a href="#research" data-i="navResearch">Nghiên cứu</a>
-<a href="#services" data-i="navServices">Dịch vụ</a>
-<a href="#equipment" data-i="navEquipment">Thiết bị</a>
-<a href="#contact" data-i="navContact">Liên hệ</a>
-</nav>
+<summary aria-controls="mobile-nav" aria-label="Mở/đóng menu" id="menu"><svg aria-hidden="true" fill="none" height="24" viewbox="0 0 24 24" width="24"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg></summary>
+<nav aria-label="Điều hướng chính" id="mobile-nav"><a data-i="navHome" href="index.html">Trang chủ</a>
+<a data-i="navAbout" href="ve-chung-toi.html">Giới thiệu</a>
+<a data-i="navMembers" href="thanh-vien.html">Thành viên</a>
+<a data-i="navLabs" href="cac-lab-nghien-cuu.html">Các Lab</a>
+<a data-i="navServices" href="dich-vu-thu-nghiem.html">Dịch vụ</a>
+<a data-i="navTraining" href="dao-tao-chung-chi.html">Đào tạo</a>
+<a data-i="navEquipment" href="trang-thiet-bi.html">Thiết bị</a>
+<a data-i="navResearch" href="nghien-cuu-cong-bo.html">Nghiên cứu</a>
+<a data-i="navNews" href="tin-tuc-su-kien.html">Tin tức</a>
+<a data-i="navBooking" href="booking.html">Đăng ký</a>
+<a data-i="navContact" href="lien-he.html">Liên hệ</a></nav>
 </details>
 </div>
 </div>
-</header>
-<main id="main">
+</header><main id="main">
 <div class="wrap">
 <div class="hero" id="about">
 <div>
 <div class="eyebrow" data-i="heroLabel">KHOA HỌC GHÉP NỐI. KẾT NỐI TƯƠNG LAI.</div>
-<h1 data-i="heroTitle">Kết nối vật liệu.<br>
+<h1 data-i="heroTitle">Kết nối vật liệu.<br/>
 <em>Kiến tạo giá trị.</em>
 </h1>
 <p class="lead" data-i="heroText">JWRI HUST-UOsaka kết nối nghiên cứu, đào tạo và ứng dụng công nghiệp trong công nghệ hàn, ghép nối và vật liệu — trên nền tảng hợp tác giữa Đại học Bách khoa Hà Nội và Đại học Osaka.</p>
 <div class="actions">
-<a class="btn" href="#research">
+<a class="btn" href="nghien-cuu-cong-bo.html">
 <span data-i="explore">Khám phá nghiên cứu</span> ↗</a>
-<a class="btn light" href="#contact" data-i="collaborate">Kết nối hợp tác</a>
+<a class="btn light" data-i="collaborate" href="booking.html">Kết nối hợp tác</a>
 </div>
 </div>
-<div class="visual" role="img" aria-label="Abstract illustration of two materials joining at a weld">
-<div class="eyebrow" data-i="visualTitle">THE SCIENCE OF CONNECTION</div>
-<svg viewBox="0 0 440 270" aria-hidden="true">
-<defs>
-<linearGradient id="plate" x2="1" y2="1">
-<stop stop-color="#c2d5dc"/>
-<stop offset="1" stop-color="#3d6477"/>
-</linearGradient>
-<radialGradient id="heat">
-<stop stop-color="#fff6bc"/>
-<stop offset=".25" stop-color="#f2a468"/>
-<stop offset="1" stop-color="#c1603f" stop-opacity="0"/>
-</radialGradient>
-<pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse">
-<path d="M22 0H0V22" fill="none" stroke="#fff" stroke-opacity=".07"/>
-</pattern>
-</defs>
-<rect width="440" height="270" fill="url(#grid)"/>
-<path d="M15 155 160 69 230 112 85 201Z" fill="url(#plate)"/>
-<path d="M230 112 303 69 439 152 365 197Z" fill="url(#plate)"/>
-<path d="M15 155v18l70 45v-17Zm70 46 145-89v18L85 218Zm145-89v18l135 85v-18Zm135 85v18l74-45v-18Z" fill="#557c8e"/>
-<path d="m160 69 205 128" stroke="#f5bf88" stroke-width="3"/>
-<circle cx="230" cy="113" r="65" fill="url(#heat)"/>
-<path d="m250 12-20 68" stroke="#91adba" stroke-width="20"/>
-<path d="m231 79-5 23" stroke="#fff4ca" stroke-width="5"/>
-<g stroke="#f5bd7d" stroke-width="1.5">
-<path d="m229 110-41-38m45 37 40-31m-40 38 55 18m-62-21-22 32m26-30 4-56"/>
-</g>
-<circle cx="228" cy="111" r="7" fill="#fff9d8"/>
-<text x="24" y="245" fill="#b9d0db" font-size="9" letter-spacing="3" data-i="visualMaterials">MATERIALS / ENERGY / INNOVATION</text>
-</svg>
-<div class="visual-caption">
-<span data-i="visualPlace">HANOI, VIETNAM</span>
-<span data-i="visualTag">RESEARCH WITHOUT BOUNDARIES ↗</span>
-</div>
-</div>
+<figure class="visual hero-photo"><img alt="JWRI HUST-UOsaka" src="media-b91fc128cbd9.webp"/><figcaption>JWRI HUST-UOsaka · HUST × Osaka University</figcaption></figure>
 </div>
 <div class="strip">
 <div>
@@ -297,48 +111,48 @@ header #mobile-nav a:hover,header #mobile-nav a:focus-visible{background:var(--s
 <section class="wrap" id="services">
 <div class="section-head">
 <div>
-<div class="eyebrow" data-i="servicesLabel">DỊCH VỤ & THỬ NGHIỆM</div>
-<h2 data-i="servicesTitle">Hiểu vật liệu.<br>Làm chủ chất lượng.</h2>
+<div class="eyebrow" data-i="servicesLabel">DỊCH VỤ &amp; THỬ NGHIỆM</div>
+<h2 data-i="servicesTitle">Hiểu vật liệu.<br/>Làm chủ chất lượng.</h2>
 </div>
 <p data-i="servicesText">Trao đổi với nhóm chuyên môn để lựa chọn phương pháp phân tích, chuẩn bị mẫu và xác định phạm vi công việc phù hợp.</p>
 </div>
 <div class="service-list">
-<a class="service" href="mailto:duy.hanle@hust.edu.vn?subject=SEM%20EDS">
+<a class="service" href="sem-eds.html">
 <div>
 <b>SEM / EDS</b>
 <small data-i="s1">Hình thái bề mặt và phân tích thành phần nguyên tố</small>
 </div>
 <span class="arrow">↗</span>
 </a>
-<a class="service" href="mailto:duy.hanle@hust.edu.vn?subject=EBSD">
+<a class="service" href="ebsd.html">
 <div>
 <b>EBSD</b>
 <small data-i="s2">Định hướng tinh thể, pha và đặc trưng hạt</small>
 </div>
 <span class="arrow">↗</span>
 </a>
-<a class="service" href="mailto:duy.hanle@hust.edu.vn?subject=XRD">
+<a class="service" href="xrd.html">
 <div>
 <b>XRD</b>
 <small data-i="s3">Trao đổi yêu cầu phân tích nhiễu xạ tia X</small>
 </div>
 <span class="arrow">↗</span>
 </a>
-<a class="service" href="mailto:duy.hanle@hust.edu.vn?subject=Mechanical%20testing">
+<a class="service" href="dich-vu-thu-nghiem.html">
 <div>
 <b data-i="s4">Thử nghiệm cơ tính</b>
 <small data-i="s4t">Kéo, uốn, độ cứng và độ dai va đập</small>
 </div>
 <span class="arrow">↗</span>
 </a>
-<a class="service" href="mailto:duy.hanle@hust.edu.vn?subject=Metallography">
+<a class="service" href="chup-anh-macro-to-chuc-te-vi.html">
 <div>
-<b data-i="s5">Kim tương & chuẩn bị mẫu</b>
+<b data-i="s5">Kim tương &amp; chuẩn bị mẫu</b>
 <small data-i="s5t">Quan sát macro, tổ chức tế vi và chuẩn bị mẫu phân tích</small>
 </div>
 <span class="arrow">↗</span>
 </a>
-<a class="service" href="mailto:duy.hanle@hust.edu.vn?subject=Welding%20consulting">
+<a class="service" href="dich-vu-thu-nghiem-tu-van-chuyen-giao-cong-nghe-han.html">
 <div>
 <b data-i="s6">Tư vấn công nghệ hàn</b>
 <small data-i="s6t">Trao đổi bài toán quy trình, chất lượng và chuyển giao công nghệ</small>
@@ -353,7 +167,7 @@ header #mobile-nav a:hover,header #mobile-nav a:focus-visible{background:var(--s
 <div class="section-head">
 <div>
 <div class="eyebrow" data-i="equipmentLabel">HẠ TẦNG NGHIÊN CỨU</div>
-<h2 data-i="equipmentTitle">Thiết bị cho những<br>câu hỏi chuyên sâu.</h2>
+<h2 data-i="equipmentTitle">Thiết bị cho những<br/>câu hỏi chuyên sâu.</h2>
 </div>
 <p data-i="equipmentText">Một số thiết bị tiêu biểu phục vụ nghiên cứu công nghệ hàn và phân tích vật liệu tại JWRI HUST-UOsaka.</p>
 </div>
@@ -386,24 +200,24 @@ header #mobile-nav a:hover,header #mobile-nav a:focus-visible{background:var(--s
 </div>
 <aside class="quote">
 <div>
-<div class="eyebrow" data-i="trainingLabel">ĐÀO TẠO & HỢP TÁC</div>
+<div class="eyebrow" data-i="trainingLabel">ĐÀO TẠO &amp; HỢP TÁC</div>
 <h3 data-i="trainingTitle">Đưa tri thức từ phòng thí nghiệm đến thực tiễn.</h3>
 <p data-i="trainingText">Kết nối đào tạo, nghiên cứu và nhu cầu doanh nghiệp trong công nghệ hàn, ghép nối và vật liệu.</p>
 </div>
-<a class="btn" href="#contact">
+<a class="btn" href="booking.html">
 <span data-i="trainingCta">Trao đổi nhu cầu đào tạo</span> ↗</a>
 </aside>
 </div>
 </section>
 </div>
-<section class="contact" id="contact">
+<section class="wrap"><div class="section-head"><div><div class="eyebrow" data-i="contentLabel">KHÁM PHÁ JWRI HUST-UOSAKA</div><h2 data-i="contentTitle">Con người, tri thức và công nghệ.</h2></div></div><div class="directory-grid"><article class="directory-card about"><a href="ve-chung-toi.html"><img alt="Giới thiệu" loading="lazy" src="media-76946d558793.webp"/></a><div class="card-copy"><h3><a href="ve-chung-toi.html">Giới thiệu</a></h3><p>TRƯỜNG CƠ KHÍ - ĐẠI HỌC BÁCH KHOA HÀ NỘI ĐẠI HỌC OSAKA (NHẬT BẢN) HỒ SƠ NĂNG LỰC VÀ GIỚI THIỆU TỔ CHỨC TRUNG TÂM NGHIÊN CỨU CÔNG NGHỆ HÀN VÀ GHÉP NỐI (JOINING AND WELDING RESEARCH INSTITUTE - JWRI HUST-UOsaka) I. TỔNG QUAN VÀ TẦM …</p><a class="read" href="ve-chung-toi.html"><span data-i="readMore">Đọc chi tiết</span> ↗</a></div></article><article class="directory-card labs"><div class="card-copy"><h3><a href="cac-lab-nghien-cuu.html">Các Lab nghiên cứu</a></h3><p>Trung tâm Nghiên cứu Công nghệ Hàn và Ghép nối (JWRI HUST-UOsaka) được định hướng xây dựng theo mô hình hệ sinh thái nghiên cứu và đào tạo tinh gọn, chuyên sâu với 03 phòng thí nghiệm (Lab) chuyên ngành . Dưới đây là thông tin giớ…</p><a class="read" href="cac-lab-nghien-cuu.html"><span data-i="readMore">Đọc chi tiết</span> ↗</a></div></article><article class="directory-card training"><div class="card-copy"><h3><a href="dao-tao-va-chung-chi.html">Đào tạo và chứng chỉ</a></h3><p>TRUNG TÂM NGHIÊN CỨU CÔNG NGHỆ HÀN VÀ GHÉP NỐI (JWRI HUST-UOsaka) Đào Tạo Nhân Lực Chất Lượng Cao Từ Đại Học Đến Sau Đại Học &amp; Cấp Chứng Chỉ Hàn Quốc Tế Là đơn vị chuyên môn liên ngành trực thuộc Trường Cơ khí – Đại học Bách khoa …</p><a class="read" href="dao-tao-va-chung-chi.html"><span data-i="readMore">Đọc chi tiết</span> ↗</a></div></article><article class="directory-card research"><div class="card-copy"><h3><a href="nghien-cuu-va-cong-bo-khoa-hoc-2023-2026.html">Nghiên cứu và công bố khoa học 2023-2026</a></h3><p>BÀI GIỚI THIỆU VÀ THỐNG KÊ CÔNG BỐ KHOA HỌC TRUNG TÂM NGHIÊN CỨU CÔNG NGHỆ HÀN VÀ GHÉP NỐI (JWRI HUST-UOsaka) I. GIỚI THIỆU CHUNG VỀ NĂNG LỰC NGHIÊN CỨU KHOA HỌC Trung tâm Nghiên cứu Công nghệ Hàn và Ghép nối (JWRI HUST-UOsaka) là…</p><a class="read" href="nghien-cuu-va-cong-bo-khoa-hoc-2023-2026.html"><span data-i="readMore">Đọc chi tiết</span> ↗</a></div></article></div><div class="section-actions"><a class="btn light" data-i="navMembers" href="thanh-vien.html">Thành viên</a><a class="btn light" data-i="navEquipment" href="trang-thiet-bi.html">Trang thiết bị</a><a class="btn light" data-i="navServices" href="dich-vu-thu-nghiem.html">Dịch vụ</a></div></section><section class="wrap"><div class="section-head"><div><div class="eyebrow" data-i="navNews">Tin tức</div><h2 data-i="navNews">Tin tức &amp; sự kiện</h2></div><a data-i="browseAll" href="tin-tuc-su-kien.html">Xem tất cả</a></div><div class="directory-grid"><article class="directory-card news"><div class="card-copy"><h3><a href="vuon-ra-bien-lon-nam-bat-co-hoi-hoc-tap-va-lam-viec-tai-nhat-ban-cung-ncm-han-cong-nghe-kim-loai-54592525.html">VƯƠN RA BIỂN LỚN: NẮM BẮT CƠ HỘI HỌC TẬP VÀ LÀM VIỆC TẠI NHẬT BẢN CÙNG NCM HÀN &amp; CÔNG NGHỆ KIM LOẠI</a></h3><p>Khi nhắc đến "Hàn", bạn hình dung ra điều gì? Những tia lửa chói lòa hay người thợ lấm lem trong các xưởng cơ khí truyền thống? Đã đến lúc phải thay đổi hoàn toàn góc nhìn đó! Trong Kỷ nguyên Công nghiệp 4.0, Công nghệ &amp; Kỹ thuật …</p><a class="read" href="vuon-ra-bien-lon-nam-bat-co-hoi-hoc-tap-va-lam-viec-tai-nhat-ban-cung-ncm-han-cong-nghe-kim-loai-54592525.html"><span data-i="readMore">Đọc chi tiết</span> ↗</a></div></article><article class="directory-card news"><div class="card-copy"><h3><a href="vuon-ra-bien-lon-nam-bat-co-hoi-hoc-tap-va-lam-viec-tai-nhat-ban-cung-ncm-han-cong-nghe-kim-loai.html">VƯƠN RA BIỂN LỚN: NẮM BẮT CƠ HỘI HỌC TẬP VÀ LÀM VIỆC TẠI NHẬT BẢN CÙNG NCM HÀN &amp; CÔNG NGHỆ KIM LOẠI</a></h3><p>Nhật Bản luôn được biết đến là cường quốc hàng đầu thế giới về công nghệ cơ khí và vật liệu. Bạn có muốn trực tiếp trải nghiệm môi trường học thuật đỉnh cao hay nắm chắc trong tay cơ hội làm việc tại xứ sở hoa anh đào ngay từ khi …</p><a class="read" href="vuon-ra-bien-lon-nam-bat-co-hoi-hoc-tap-va-lam-viec-tai-nhat-ban-cung-ncm-han-cong-nghe-kim-loai.html"><span data-i="readMore">Đọc chi tiết</span> ↗</a></div></article><article class="directory-card news"><div class="card-copy"><h3><a href="ban-tin-hoat-dong-quy-2-2026-vung-buoc-phat-trien-va-mo-rong-mang-luoi-quoc-te-tai-jwri-hust-uosaka.html">BẢN TIN HOẠT ĐỘNG QUÝ 2/2026: VỮNG BƯỚC PHÁT TRIỂN VÀ MỞ RỘNG MẠNG LƯỚI QUỐC TẾ TẠI JWRI HUST-UOsaka</a></h3><p>Tiếp nối những thành công rực rỡ từ những tháng đầu năm, bước sang Quý 2/2026, Trung tâm Nghiên cứu Công nghệ hàn &amp; Ghép nối JWRI HUST-UOsaka tiếp tục duy trì nhịp độ làm việc sôi nổi, ghi dấu ấn mạnh mẽ trên cả ba trụ cột: Nâng t…</p><a class="read" href="ban-tin-hoat-dong-quy-2-2026-vung-buoc-phat-trien-va-mo-rong-mang-luoi-quoc-te-tai-jwri-hust-uosaka.html"><span data-i="readMore">Đọc chi tiết</span> ↗</a></div></article><article class="directory-card news"><div class="card-copy"><h3><a href="soi-noi-chuoi-hoat-dong-khoi-dau-nam-moi-2026-tai-trung-tam-jwri-hust-uosaka-ket-noi-sang-tao-va-vuon-tam-quoc-te.html">SÔI NỔI CHUỖI HOẠT ĐỘNG KHỞI ĐẦU NĂM MỚI 2026 TẠI TRUNG TÂM JWRI HUST-UOsaka: KẾT NỐI, SÁNG TẠO VÀ VƯƠN TẦM QUỐC TẾ</a></h3><p>Những tháng đầu năm 2026 đã ghi dấu một khởi đầu rực rỡ và đầy năng lượng tại Trung tâm Nghiên cứu Công nghệ Hàn &amp; Ghép nối (JWRI HUST-UOsaka). Từ các hoạt động tổng kết, định hướng chiến lược, gắn kết nội bộ, nâng cao chất lượng …</p><a class="read" href="soi-noi-chuoi-hoat-dong-khoi-dau-nam-moi-2026-tai-trung-tam-jwri-hust-uosaka-ket-noi-sang-tao-va-vuon-tam-quoc-te.html"><span data-i="readMore">Đọc chi tiết</span> ↗</a></div></article></div></section><section class="wrap"><div class="section-head"><h2 data-i="partners">Đối tác</h2></div><div class="partner-grid"><img alt="PVPower" loading="lazy" src="media-65a92485f9ed.webp"/><img alt="Alpha ECC" loading="lazy" src="media-141c76d81c93.webp"/><img alt="Messer" loading="lazy" src="media-8bf51628c931.webp"/><img alt="Nam Vuong" loading="lazy" src="media-4e8762b41534.webp"/><img alt="Việt Đức" loading="lazy" src="media-c845ff1a12c7.webp"/><img alt="Technokom" loading="lazy" src="media-89a8c4441b9f.webp"/></div></section><section class="contact" id="contact">
 <div class="wrap contact-grid">
 <div>
 <div class="eyebrow" data-i="contactLabel">BẮT ĐẦU MỘT KẾT NỐI</div>
-<h2 data-i="contactTitle">Bài toán của thầy/cô,<br>doanh nghiệp là gì?</h2>
+<h2 data-i="contactTitle">Bài toán của thầy/cô,<br/>doanh nghiệp là gì?</h2>
 <p data-i="contactText">Gửi yêu cầu nghiên cứu, thử nghiệm hoặc đào tạo. Nhóm chuyên môn sẽ trao đổi về phương án và phạm vi thực hiện.</p>
 <div class="actions">
-<a class="btn" href="mailto:duy.hanle@hust.edu.vn" data-i="contactCta">Gửi yêu cầu qua email ↗</a>
+<a class="btn" data-i="contactCta" href="mailto:duy.hanle@hust.edu.vn">Gửi yêu cầu qua email ↗</a>
 </div>
 </div>
 <div class="contact-details">
@@ -426,309 +240,17 @@ header #mobile-nav a:hover,header #mobile-nav a:focus-visible{background:var(--s
 </div>
 </div>
 </section>
-</main>
-<footer>
+</main><footer>
 <div class="wrap footer-line">
-<p>© <span id="year">2026</span> JWRI HUST-UOsaka<br>Welding and Joining Research Institute HUST-UOsaka</p>
+<p>© <span id="year">2026</span> JWRI HUST-UOsaka<br/>Welding and Joining Research Institute HUST-UOsaka<br/><a href="https://www.youtube.com/@JWRIHUST-UOsaka">YouTube</a> · <a href="mailto:duy.hanle@hust.edu.vn">duy.hanle@hust.edu.vn</a></p>
 <div class="theme-control">
-<label for="theme" data-i="themeLabel">Phong cách giao diện</label>
+<label data-i="themeLabel" for="theme">Phong cách giao diện</label>
 <select id="theme">
-<option value="institute" data-i="themeInstitute">Institute</option>
-<option value="tech" data-i="themeTech">Technology</option>
-<option value="academic" data-i="themeAcademic">Academic</option>
+<option data-i="themeInstitute" value="institute">Institute</option>
+<option data-i="themeTech" value="tech">Technology</option>
+<option data-i="themeAcademic" value="academic">Academic</option>
 </select>
 </div>
-<a href="#" style="font-size:12px" data-i="backTop">Về đầu trang ↑</a>
+<a data-i="backTop" href="#" style="font-size:12px">Về đầu trang ↑</a>
 </div>
-</footer><script>
-
-const en={top:'VIETNAM – JAPAN RESEARCH COLLABORATION',
-navAbout:'About',
-navResearch:'Research',
-navServices:'Services',
-navEquipment:'Facilities',
-navContact:'Contact',
-heroLabel:'JOINING SCIENCE. CONNECTING THE FUTURE.',
-heroTitle:'Joining materials.<br><em>Creating value.</em>',
-heroText:'JWRI HUST-UOsaka connects research, education and industrial applications in welding, joining and materials through collaboration between Hanoi University of Science and Technology and Osaka University.',
-explore:'Explore our research',
-collaborate:'Collaborate with us',
-pillar1:'Interdisciplinary research',
-pillar1s:'Welding · Joining · Materials',
-pillar2:'Vietnam – Japan collaboration',
-pillar3:'Industry engagement',
-pillar3s:'Testing · Consulting · Training',
-researchLabel:'RESEARCH AREAS',
-researchTitle:'From mechanisms to applications.',
-researchText:'Connecting materials science and manufacturing technology to address practical challenges in research and industry.',
-r1:'Welding and joining processes',
-r1t:'Studying heat sources, material interactions and process parameters in fusion welding, friction stir welding and joining processes.',
-r2:'Materials and microstructure',
-r2t:'Investigating relationships between processing, microstructure and properties in materials, welds and dissimilar joints.',
-r3:'Simulation and optimization',
-r3t:'Combining experiments, simulation and data analysis to understand mechanisms, evaluate quality and optimize manufacturing processes.',
-servicesLabel:'SERVICES & TESTING',
-servicesTitle:'Understand materials.<br>Advance quality.',
-servicesText:'Discuss your analytical requirements, specimen preparation and scope of work with our technical team.',
-s1:'Surface morphology and elemental analysis',
-s2:'Crystal orientation, phases and grain characterization',
-s3:'Discuss your X-ray diffraction analysis requirements',
-s4:'Mechanical testing',
-s4t:'Tensile, bend, hardness and impact testing',
-s5:'Metallography & specimen preparation',
-s5t:'Macro examination, microstructure and analytical specimen preparation',
-s6:'Welding technology consulting',
-s6t:'Process development, quality and technology transfer',
-equipmentLabel:'RESEARCH INFRASTRUCTURE',
-equipmentTitle:'Tools for deeper<br>questions.',
-equipmentText:'Selected equipment supporting welding research and materials characterization at JWRI HUST-UOsaka.',
-e2:'Fiber laser welding',
-e3:'Friction stir welding',
-e5:'Powder plasma',
-e6:'Stereo microscopy',
-trainingLabel:'EDUCATION & COLLABORATION',
-trainingTitle:'Bringing knowledge from the laboratory to practice.',
-trainingText:'Connecting education, research and industry needs in welding, joining and materials.',
-trainingCta:'Discuss your training needs',
-contactLabel:'START A CONNECTION',
-contactTitle:'What challenge<br>are you working on?',
-contactText:'Send your research, testing or training requirements. Our technical team will discuss suitable approaches and the scope of work.',
-contactCta:'Send an email enquiry ↗',
-phone:'PHONE / ZALO',
-addressLabel:'ADDRESS',
-address:'No. 3/15 Ta Quang Buu, Bach Mai Ward, Hanoi, Vietnam',
-affiliationLabel:'AFFILIATION',
-affiliation:'School of Mechanical Engineering · HUST',
-themeLabel:'Visual style',
-backTop:'Back to top ↑'};
-
-const ja={
-  "top": "ベトナム・日本の研究協力",
-  "navAbout": "概要",
-  "navResearch": "研究",
-  "navServices": "サービス",
-  "navEquipment": "設備",
-  "navContact": "お問い合わせ",
-  "heroLabel": "接合科学で、未来をつなぐ。",
-  "heroTitle": "材料をつなぐ。<br><em>価値を生み出す。</em>",
-  "heroText": "JWRI HUST-UOsakaは、ハノイ理工科大学と大阪大学の協力を基盤に、溶接・接合・材料分野の研究、教育および産業応用をつなぎます。",
-  "explore": "研究分野を見る",
-  "collaborate": "共同研究・連携のご相談",
-  "pillar1": "分野横断型の研究",
-  "pillar1s": "溶接・接合・材料",
-  "pillar2": "ベトナム・日本の協力",
-  "pillar3": "産業界との連携",
-  "pillar3s": "試験・技術相談・研修",
-  "researchLabel": "研究分野",
-  "researchTitle": "メカニズムの解明から応用へ。",
-  "researchText": "材料科学と製造技術を結びつけ、研究および生産現場の課題に取り組みます。",
-  "r1": "溶接・接合プロセス",
-  "r1t": "溶融溶接、摩擦攪拌接合などの接合プロセスにおける熱源、材料の相互作用およびプロセス条件を研究します。",
-  "r2": "材料と微細組織",
-  "r2t": "材料、溶接部および異材接合部の製造プロセス、微細組織と特性の関係を解析します。",
-  "r3": "シミュレーションと最適化",
-  "r3t": "実験、シミュレーションとデータ解析を組み合わせ、メカニズムの理解、品質評価および製造プロセスの最適化に取り組みます。",
-  "servicesLabel": "技術サービス・試験",
-  "servicesTitle": "材料を理解し、<br>品質を高める。",
-  "servicesText": "分析手法、試料の準備および実施範囲について、専門スタッフにご相談ください。",
-  "s1": "表面形態観察と元素組成分析",
-  "s2": "結晶方位、相および結晶粒の解析",
-  "s3": "X線回折分析のご相談",
-  "s4": "機械的特性試験",
-  "s4t": "引張・曲げ・硬さ・衝撃試験",
-  "s5": "金属組織観察・試料作製",
-  "s5t": "マクロ観察、微細組織観察および分析用試料の作製",
-  "s6": "溶接技術コンサルティング",
-  "s6t": "プロセス開発、品質および技術移転のご相談",
-  "equipmentLabel": "研究設備",
-  "equipmentTitle": "より深い問いに、<br>応える設備。",
-  "equipmentText": "JWRI HUST-UOsakaの溶接研究と材料解析を支える主な設備をご紹介します。",
-  "e2": "ファイバーレーザ溶接",
-  "e3": "摩擦攪拌接合",
-  "e5": "粉体プラズマ",
-  "e6": "実体顕微鏡",
-  "trainingLabel": "教育・連携",
-  "trainingTitle": "研究室の知を、実践へ。",
-  "trainingText": "溶接・接合・材料分野の教育・研究と産業界のニーズをつなぎます。",
-  "trainingCta": "研修に関するご相談",
-  "contactLabel": "新たな連携の第一歩",
-  "contactTitle": "どのような課題に<br>取り組んでいますか？",
-  "contactText": "研究、試験または研修に関するご要望をお寄せください。専門スタッフが実施方法と範囲についてご相談に応じます。",
-  "contactCta": "メールで問い合わせる ↗",
-  "phone": "電話 / ZALO",
-  "addressLabel": "所在地",
-  "address": "ベトナム・ハノイ市バクマイ地区、タクアンブウ通り15番路地3号",
-  "affiliationLabel": "所属",
-  "affiliation": "ハノイ理工科大学（HUST）機械工学部",
-  "themeLabel": "表示スタイル",
-  "backTop": "ページ上部へ ↑",
-  "skip": "本文へ移動",
-  "visualTitle": "接合の科学",
-  "visualPlace": "ベトナム・ハノイ",
-  "visualTag": "境界を越える研究 ↗",
-  "visualMaterials": "材料 / エネルギー / イノベーション",
-  "r1Label": "01 / 接合プロセス",
-  "r2Label": "02 / 材料科学",
-  "r3Label": "03 / 計算工学",
-  "emailLabel": "メール",
-  "themeInstitute": "研究機関",
-  "themeTech": "テクノロジー",
-  "themeAcademic": "アカデミック",
-  "languageLabel": "言語を選択",
-  "navLabel": "メインナビゲーション",
-  "menuLabel": "メニューを開閉",
-  "visualAlt": "溶接によって二つの材料を接合する模式図"
-};
-const zh={
-  "top": "越南—日本科研合作",
-  "navAbout": "关于我们",
-  "navResearch": "科学研究",
-  "navServices": "技术服务",
-  "navEquipment": "仪器设备",
-  "navContact": "联系我们",
-  "heroLabel": "以连接科学，共创未来。",
-  "heroTitle": "连接材料。<br><em>创造价值。</em>",
-  "heroText": "JWRI HUST-UOsaka依托河内理工大学与大阪大学的合作，连接焊接、连接及材料领域的科学研究、人才培养与工业应用。",
-  "explore": "探索研究领域",
-  "collaborate": "洽谈合作",
-  "pillar1": "跨学科研究",
-  "pillar1s": "焊接 · 连接 · 材料",
-  "pillar2": "越日合作",
-  "pillar3": "产学合作",
-  "pillar3s": "检测 · 咨询 · 培训",
-  "researchLabel": "研究领域",
-  "researchTitle": "从机理研究到实际应用。",
-  "researchText": "融合材料科学与制造技术，解决科研与工业生产中的实际问题。",
-  "r1": "焊接与连接工艺",
-  "r1t": "研究熔焊、搅拌摩擦焊及其他连接工艺中的热源、材料相互作用和工艺参数。",
-  "r2": "材料与微观组织",
-  "r2t": "分析材料、焊缝及异种材料接头的制造工艺、微观组织与性能之间的关系。",
-  "r3": "模拟与优化",
-  "r3t": "结合实验、模拟与数据分析，理解机理、评价质量并优化制造工艺。",
-  "servicesLabel": "技术服务与检测",
-  "servicesTitle": "理解材料。<br>提升质量。",
-  "servicesText": "欢迎与技术团队沟通分析方法、试样制备及工作范围，制定合适的方案。",
-  "s1": "表面形貌观察与元素成分分析",
-  "s2": "晶体取向、物相与晶粒特征分析",
-  "s3": "X射线衍射分析需求咨询",
-  "s4": "力学性能测试",
-  "s4t": "拉伸、弯曲、硬度与冲击试验",
-  "s5": "金相分析与试样制备",
-  "s5t": "宏观观察、微观组织分析及分析试样制备",
-  "s6": "焊接技术咨询",
-  "s6t": "工艺开发、质量与技术转移咨询",
-  "equipmentLabel": "科研设施",
-  "equipmentTitle": "以先进工具，<br>探索更深问题。",
-  "equipmentText": "用于支持JWRI HUST-UOsaka焊接研究与材料表征的部分代表性设备。",
-  "e2": "光纤激光焊接",
-  "e3": "搅拌摩擦焊",
-  "e5": "等离子粉末工艺",
-  "e6": "体视显微镜",
-  "trainingLabel": "教育与合作",
-  "trainingTitle": "将实验室知识转化为实践。",
-  "trainingText": "连接焊接、连接及材料领域的教育、科研与企业需求。",
-  "trainingCta": "咨询培训需求",
-  "contactLabel": "开启合作",
-  "contactTitle": "您正在解决<br>什么技术难题？",
-  "contactText": "欢迎发送科研、检测或培训需求。技术团队将与您讨论实施方案和工作范围。",
-  "contactCta": "发送咨询邮件 ↗",
-  "phone": "电话 / ZALO",
-  "addressLabel": "地址",
-  "address": "越南河内市白梅坊谢光宝街15巷3号",
-  "affiliationLabel": "所属单位",
-  "affiliation": "河内理工大学（HUST）机械工程学院",
-  "themeLabel": "界面风格",
-  "backTop": "返回顶部 ↑",
-  "skip": "跳转到正文",
-  "visualTitle": "连接科学",
-  "visualPlace": "越南·河内",
-  "visualTag": "科研无界 ↗",
-  "visualMaterials": "材料 / 能源 / 创新",
-  "r1Label": "01 / 连接工艺",
-  "r2Label": "02 / 材料科学",
-  "r3Label": "03 / 计算工程",
-  "emailLabel": "电子邮箱",
-  "themeInstitute": "研究机构",
-  "themeTech": "科技",
-  "themeAcademic": "学术",
-  "languageLabel": "选择语言",
-  "navLabel": "主导航",
-  "menuLabel": "展开或收起菜单",
-  "visualAlt": "通过焊接连接两种材料的示意图"
-};
-Object.assign(en,{
-  "skip": "Skip to content",
-  "visualTitle": "THE SCIENCE OF CONNECTION",
-  "visualPlace": "HANOI, VIETNAM",
-  "visualTag": "RESEARCH WITHOUT BOUNDARIES ↗",
-  "visualMaterials": "MATERIALS / ENERGY / INNOVATION",
-  "r1Label": "01 / JOINING PROCESSES",
-  "r2Label": "02 / MATERIALS SCIENCE",
-  "r3Label": "03 / COMPUTATIONAL ENGINEERING",
-  "emailLabel": "EMAIL",
-  "themeInstitute": "Institute",
-  "themeTech": "Technology",
-  "themeAcademic": "Academic",
-  "languageLabel": "Choose language",
-  "navLabel": "Main navigation",
-  "menuLabel": "Toggle menu",
-  "visualAlt": "Illustration of two materials being joined by welding"
-});
-const nodes=[...document.querySelectorAll('[data-i]')];
-const vi=Object.fromEntries(nodes.map(n=>[n.dataset.i,n.innerHTML]));
-Object.assign(vi,{
-  "skip": "Chuyển đến nội dung",
-  "visualTitle": "KHOA HỌC GHÉP NỐI",
-  "visualPlace": "HÀ NỘI, VIỆT NAM",
-  "visualTag": "NGHIÊN CỨU KHÔNG BIÊN GIỚI ↗",
-  "visualMaterials": "VẬT LIỆU / NĂNG LƯỢNG / ĐỔI MỚI",
-  "r1Label": "01 / QUÁ TRÌNH GHÉP NỐI",
-  "r2Label": "02 / KHOA HỌC VẬT LIỆU",
-  "r3Label": "03 / KỸ THUẬT TÍNH TOÁN",
-  "emailLabel": "EMAIL",
-  "themeInstitute": "Viện nghiên cứu",
-  "themeTech": "Công nghệ",
-  "themeAcademic": "Học thuật",
-  "languageLabel": "Chọn ngôn ngữ",
-  "navLabel": "Điều hướng chính",
-  "menuLabel": "Mở/đóng menu",
-  "visualAlt": "Minh họa hai vật liệu được ghép nối bằng hàn"
-});
-const dictionaries={vi,en,ja,'zh-Hans':zh};
-let lang='vi';
-function setLang(next){
-lang=Object.hasOwn(dictionaries,next)?next:'vi';
-const dict=dictionaries[lang];
-nodes.forEach(n=>{if(dict[n.dataset.i]!==undefined)n.innerHTML=dict[n.dataset.i]});
-document.documentElement.lang=lang;
-const language=document.getElementById('language');
-language.value=lang;
-language.setAttribute('aria-label',dict.languageLabel);
-document.getElementById('nav').setAttribute('aria-label',dict.navLabel);
-document.getElementById('mobile-nav').setAttribute('aria-label',dict.navLabel);
-document.getElementById('menu').setAttribute('aria-label',dict.menuLabel);
-document.querySelector('.visual').setAttribute('aria-label',dict.visualAlt);
-document.querySelector('meta[name="description"]').content=dict.heroText;
-try{localStorage.setItem('jwri-language',lang)}catch(e){}
-}
-document.getElementById('language').addEventListener('change',e=>setLang(e.target.value));
-const theme=document.getElementById('theme');
-function setTheme(value){if(!['institute',
-'tech',
-'academic'].includes(value))return;
-document.body.dataset.theme=value;
-theme.value=value;
-try{localStorage.setItem('jwri-theme',
-value)}catch(e){}}theme.addEventListener('change',
-()=>setTheme(theme.value));
-try{setLang(localStorage.getItem('jwri-language')||'vi');
-setTheme(localStorage.getItem('jwri-theme')||'institute')}catch(e){}const mobileMenu=document.getElementById('mobile-menu');
-const menu=document.getElementById('menu');
-const mobileNav=document.getElementById('mobile-nav');
-mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileMenu.open=false}));
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mobileMenu.open){mobileMenu.open=false;menu.focus()}});
-document.addEventListener('click',e=>{if(mobileMenu.open&&!mobileMenu.contains(e.target))mobileMenu.open=false});
-window.matchMedia('(max-width:760px)').addEventListener('change',e=>{if(!e.matches)mobileMenu.open=false});
-document.getElementById('year').textContent=new Date().getFullYear();
-
-</script></body></html>
+</footer></body></html>
