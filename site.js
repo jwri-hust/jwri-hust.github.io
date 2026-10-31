@@ -272,7 +272,7 @@ if(document.body.dataset.page==='home')document.querySelector('meta[name="descri
 document.querySelector('#content-search')?.setAttribute('placeholder',dict.searchPlaceholder);
 try{localStorage.setItem('jwri-language',lang)}catch(e){}
 }
-document.getElementById('language').addEventListener('change',e=>setLang(e.target.value));
+document.getElementById('language').addEventListener('change',e=>{setLang(e.target.value);writeTranslationPreference(e.target.value);location.reload()});
 const theme=document.getElementById('theme');
 function setTheme(value){if(!['institute',
 'tech',
@@ -297,3 +297,51 @@ const search=document.getElementById('content-search');
 if(search){const fold=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/đ/g,'d');search.addEventListener('input',()=>{const query=fold(search.value);let visible=0;document.querySelectorAll('.directory-card').forEach(card=>{card.hidden=!fold(card.textContent).includes(query);if(!card.hidden)visible++});document.getElementById('empty-results').hidden=visible>0})}
 const enquiry=document.getElementById('enquiry');
 if(enquiry)enquiry.addEventListener('submit',event=>{event.preventDefault();if(!enquiry.reportValidity())return;const data=new FormData(enquiry);const lines=[...data].map(([key,value])=>key+': '+value).join('\n');location.href='mailto:duy.hanle@hust.edu.vn?subject='+encodeURIComponent('JWRI enquiry: '+data.get('Service / Equipment'))+'&body='+encodeURIComponent(lines)});
+
+
+// Full-page translation is loaded only when a visitor selects a non-Vietnamese language.
+const translationTargets={en:'en',ja:'ja','zh-Hans':'zh-CN'};
+const translationMessages={
+vi:{loading:'Đang dịch nội dung…',ready:'Bản dịch tự động bằng Google Dịch.',failed:'Chưa tải được bản dịch tự động.',fallback:'Mở bản dịch trên Google Dịch'},
+en:{loading:'Translating the content…',ready:'Automatically translated by Google Translate.',failed:'Automatic translation could not be loaded.',fallback:'Open the translated page in Google Translate'},
+ja:{loading:'本文を翻訳しています…',ready:'Google 翻訳による自動翻訳です。',failed:'自動翻訳を読み込めませんでした。',fallback:'Google 翻訳で翻訳ページを開く'},
+'zh-Hans':{loading:'正在翻译内容…',ready:'由 Google 翻译自动翻译。',failed:'暂时无法加载自动翻译。',fallback:'在 Google 翻译中打开译文'}
+};
+function writeTranslationPreference(next){
+const target=translationTargets[next];
+const cookieValue=target?'/vi/'+target:'/vi/vi';
+document.cookie='googtrans='+cookieValue+';path=/;max-age=31536000;SameSite=Lax;Secure';
+}
+function initializeContentTranslation(){
+document.querySelectorAll('header,footer,[data-i],.brand,.tag,.equip-list span,a[href^="mailto:"],a[href^="tel:"],input,textarea,select,code').forEach(element=>{element.classList.add('notranslate');element.setAttribute('translate','no')});
+const originalNotice=document.querySelector('.source-language');
+if(originalNotice&&lang!=='vi')originalNotice.textContent=translationMessages[lang].loading;
+const target=translationTargets[lang];
+if(!target)return;
+const message=translationMessages[lang];
+writeTranslationPreference(lang);
+const box=document.createElement('aside');box.className='translation-notice notranslate';box.setAttribute('translate','no');box.setAttribute('aria-live','polite');
+const status=document.createElement('span');status.textContent=message.loading;box.append(status);
+const provider=document.createElement('div');provider.id='jwri-google-translate';box.append(provider);
+const fallback=document.createElement('a');fallback.textContent=message.fallback;
+fallback.href='https://translate.google.com/translate?sl=vi&tl='+encodeURIComponent(target)+'&u='+encodeURIComponent(location.href.split('#')[0]);
+fallback.target='_blank';fallback.rel='noopener';fallback.hidden=true;box.append(fallback);
+document.querySelector('main').prepend(box);
+const watched=[...document.querySelectorAll('.page-heading h1:not([data-i]),.directory-card h3,.directory-card .card-copy p,.article-body p:not([data-i]),.article-body td')].filter(e=>e.textContent.trim().length>20);
+const originals=new Map(watched.map(e=>[e,e.textContent]));
+let translated=false;
+const monitor=new MutationObserver(()=>{if(watched.some(e=>e.textContent!==originals.get(e))){translated=true;status.textContent=message.ready;if(originalNotice)originalNotice.textContent=message.ready;document.body.dataset.translationState='ready';document.querySelectorAll('.article-body').forEach(e=>e.lang=lang);monitor.disconnect()}});
+watched.forEach(e=>monitor.observe(e,{subtree:true,childList:true,characterData:true}));
+const failed=()=>{if(translated)return;status.textContent=message.failed;if(originalNotice)originalNotice.textContent=message.failed;fallback.hidden=false;document.body.dataset.translationState='unavailable'};
+window.jwriGoogleTranslateInit=()=>{
+try{
+new google.translate.TranslateElement({pageLanguage:'vi',includedLanguages:'en,ja,zh-CN',autoDisplay:false,multilanguagePage:true},provider.id);
+let attempts=0;
+const selectTarget=()=>{const selector=provider.querySelector('.goog-te-combo');if(selector){selector.value=target;selector.dispatchEvent(new Event('change',{bubbles:true}));return}if(++attempts<50)setTimeout(selectTarget,200);else failed()};
+selectTarget();
+}catch(error){failed()}
+};
+const loader=document.createElement('script');loader.src='https://translate.google.com/translate_a/element.js?cb=jwriGoogleTranslateInit';loader.async=true;loader.onerror=failed;document.head.append(loader);
+setTimeout(()=>{if(!translated)failed()},25000);
+}
+initializeContentTranslation();
